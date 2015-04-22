@@ -1,0 +1,10 @@
+{
+	"Publish": "owntracks/user/demo/jobs/currentjob",
+	"Host": "public.owntracks.org",
+	"Port": 8883,
+	"SSL":	true,
+	"ClientId": "owntracksjobs",
+	"UserName": ""
+	"Password": ""
+	"Subscription": "owntracks/user/demo/jobs/currentjob"
+}

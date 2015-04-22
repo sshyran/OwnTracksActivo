@@ -1,0 +1,10 @@
+PODS:
+  - MQTTClient (0.1.4)
+
+DEPENDENCIES:
+  - MQTTClient
+
+SPEC CHECKSUMS:
+  MQTTClient: b3f7ebe358e9ef96fb47f264bad743c9e4b9337e
+
+COCOAPODS: 0.35.0
