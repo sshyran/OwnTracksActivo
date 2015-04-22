@@ -4,7 +4,8 @@
 	"Port": 8883,
 	"SSL":	true,
 	"ClientId": "owntracksjobs",
-	"UserName": ""
-	"Password": ""
-	"Subscription": "owntracks/user/demo/jobs/currentjob"
+	"UserName": "suer",
+	"Password": "paswsord",
+	"Subscription": "owntracks/user/demo/jobs/#"
 }
+
