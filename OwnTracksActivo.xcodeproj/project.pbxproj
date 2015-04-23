@@ -8,9 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3E37EE97BF6D5A9FB64747A2 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ACAC2D4B7A19C264F8D92C0 /* libPods.a */; };
-		8415B15B1AE806F90087EDFC /* logo22.png in Resources */ = {isa = PBXBuildFile; fileRef = 8415B1581AE806F90087EDFC /* logo22.png */; };
-		8415B15C1AE806F90087EDFC /* logo22@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8415B1591AE806F90087EDFC /* logo22@2x.png */; };
-		8415B15D1AE806F90087EDFC /* logo22@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8415B15A1AE806F90087EDFC /* logo22@3x.png */; };
 		848BD6571AE78FC90004E664 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 848BD6561AE78FC90004E664 /* main.m */; };
 		848BD65A1AE78FC90004E664 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 848BD6591AE78FC90004E664 /* AppDelegate.m */; };
 		848BD65D1AE78FC90004E664 /* OwnTracksActivo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 848BD65B1AE78FC90004E664 /* OwnTracksActivo.xcdatamodeld */; };
@@ -37,6 +34,13 @@
 		848BD6A71AE7F0B10004E664 /* icon76.png in Resources */ = {isa = PBXBuildFile; fileRef = 848BD69C1AE7F0B10004E664 /* icon76.png */; };
 		848BD6A81AE7F0B10004E664 /* icon76@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 848BD69D1AE7F0B10004E664 /* icon76@2x.png */; };
 		848BD6A91AE7F0B10004E664 /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = 848BD69E1AE7F0B10004E664 /* iTunesArtwork.png */; };
+		84A92BEC1AE8F036005E2095 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A92BEA1AE8F036005E2095 /* Crashlytics.framework */; };
+		84A92BED1AE8F036005E2095 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A92BEB1AE8F036005E2095 /* Fabric.framework */; };
+		84DAC6071AE8F4B8000FB533 /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84DAC6061AE8F4B8000FB533 /* iTunesArtwork@2x.png */; };
+		84DAC60C1AE8F738000FB533 /* Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 84DAC6081AE8F738000FB533 /* Logo.png */; };
+		84DAC60D1AE8F738000FB533 /* Logo33.png in Resources */ = {isa = PBXBuildFile; fileRef = 84DAC6091AE8F738000FB533 /* Logo33.png */; };
+		84DAC60E1AE8F738000FB533 /* Logo33@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84DAC60A1AE8F738000FB533 /* Logo33@2x.png */; };
+		84DAC60F1AE8F738000FB533 /* Logo33@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84DAC60B1AE8F738000FB533 /* Logo33@3x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,9 +56,6 @@
 /* Begin PBXFileReference section */
 		4ACAC2D4B7A19C264F8D92C0 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7136E7AC601A391F3DD26677 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		8415B1581AE806F90087EDFC /* logo22.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo22.png; sourceTree = "<group>"; };
-		8415B1591AE806F90087EDFC /* logo22@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo22@2x.png"; sourceTree = "<group>"; };
-		8415B15A1AE806F90087EDFC /* logo22@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo22@3x.png"; sourceTree = "<group>"; };
 		848BD6511AE78FC90004E664 /* OwnTracksActivo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OwnTracksActivo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		848BD6551AE78FC90004E664 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		848BD6561AE78FC90004E664 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -93,6 +94,13 @@
 		848BD69C1AE7F0B10004E664 /* icon76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon76.png; sourceTree = "<group>"; };
 		848BD69D1AE7F0B10004E664 /* icon76@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon76@2x.png"; sourceTree = "<group>"; };
 		848BD69E1AE7F0B10004E664 /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
+		84A92BEA1AE8F036005E2095 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		84A92BEB1AE8F036005E2095 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		84DAC6061AE8F4B8000FB533 /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
+		84DAC6081AE8F738000FB533 /* Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo.png; sourceTree = "<group>"; };
+		84DAC6091AE8F738000FB533 /* Logo33.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo33.png; sourceTree = "<group>"; };
+		84DAC60A1AE8F738000FB533 /* Logo33@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Logo33@2x.png"; sourceTree = "<group>"; };
+		84DAC60B1AE8F738000FB533 /* Logo33@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Logo33@3x.png"; sourceTree = "<group>"; };
 		A588B42F34B1E81A032F0887 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -101,7 +109,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84A92BEC1AE8F036005E2095 /* Crashlytics.framework in Frameworks */,
 				3E37EE97BF6D5A9FB64747A2 /* libPods.a in Frameworks */,
+				84A92BED1AE8F036005E2095 /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,6 +137,8 @@
 		80239BB352499A9B6ABB1960 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				84A92BEA1AE8F036005E2095 /* Crashlytics.framework */,
+				84A92BEB1AE8F036005E2095 /* Fabric.framework */,
 				4ACAC2D4B7A19C264F8D92C0 /* libPods.a */,
 			);
 			name = Frameworks;
@@ -177,9 +189,6 @@
 				848BD6661AE78FC90004E664 /* LaunchScreen.xib */,
 				848BD6941AE7F0B10004E664 /* icon29.png */,
 				848BD6951AE7F0B10004E664 /* icon29@2x.png */,
-				8415B1581AE806F90087EDFC /* logo22.png */,
-				8415B1591AE806F90087EDFC /* logo22@2x.png */,
-				8415B15A1AE806F90087EDFC /* logo22@3x.png */,
 				848BD6961AE7F0B10004E664 /* icon29@3x.png */,
 				848BD6971AE7F0B10004E664 /* icon40.png */,
 				848BD6981AE7F0B10004E664 /* icon40@2x.png */,
@@ -189,6 +198,11 @@
 				848BD69C1AE7F0B10004E664 /* icon76.png */,
 				848BD69D1AE7F0B10004E664 /* icon76@2x.png */,
 				848BD69E1AE7F0B10004E664 /* iTunesArtwork.png */,
+				84DAC6061AE8F4B8000FB533 /* iTunesArtwork@2x.png */,
+				84DAC6081AE8F738000FB533 /* Logo.png */,
+				84DAC6091AE8F738000FB533 /* Logo33.png */,
+				84DAC60A1AE8F738000FB533 /* Logo33@2x.png */,
+				84DAC60B1AE8F738000FB533 /* Logo33@3x.png */,
 				848BD65B1AE78FC90004E664 /* OwnTracksActivo.xcdatamodeld */,
 				848BD6541AE78FC90004E664 /* Supporting Files */,
 			);
@@ -233,6 +247,7 @@
 				848BD64E1AE78FC90004E664 /* Frameworks */,
 				848BD64F1AE78FC90004E664 /* Resources */,
 				A0A6EF5E2B15C996B83AE900 /* Copy Pods Resources */,
+				84A92BE91AE8F007005E2095 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -306,20 +321,22 @@
 			files = (
 				848BD6931AE7C3350004E664 /* otac.plist in Resources */,
 				848BD6631AE78FC90004E664 /* Main.storyboard in Resources */,
-				8415B15B1AE806F90087EDFC /* logo22.png in Resources */,
+				84DAC60D1AE8F738000FB533 /* Logo33.png in Resources */,
 				848BD6A81AE7F0B10004E664 /* icon76@2x.png in Resources */,
 				848BD6A91AE7F0B10004E664 /* iTunesArtwork.png in Resources */,
 				848BD6A21AE7F0B10004E664 /* icon40.png in Resources */,
-				8415B15D1AE806F90087EDFC /* logo22@3x.png in Resources */,
 				848BD6A31AE7F0B10004E664 /* icon40@2x.png in Resources */,
 				848BD6A01AE7F0B10004E664 /* icon29@2x.png in Resources */,
 				848BD6A11AE7F0B10004E664 /* icon29@3x.png in Resources */,
 				848BD6A61AE7F0B10004E664 /* icon60@3x.png in Resources */,
 				848BD6A51AE7F0B10004E664 /* icon60@2x.png in Resources */,
+				84DAC60C1AE8F738000FB533 /* Logo.png in Resources */,
 				848BD6A41AE7F0B10004E664 /* icon40@3x.png in Resources */,
-				8415B15C1AE806F90087EDFC /* logo22@2x.png in Resources */,
+				84DAC6071AE8F4B8000FB533 /* iTunesArtwork@2x.png in Resources */,
+				84DAC60F1AE8F738000FB533 /* Logo33@3x.png in Resources */,
 				848BD6681AE78FC90004E664 /* LaunchScreen.xib in Resources */,
 				848BD6651AE78FC90004E664 /* Images.xcassets in Resources */,
+				84DAC60E1AE8F738000FB533 /* Logo33@2x.png in Resources */,
 				848BD6A71AE7F0B10004E664 /* icon76.png in Resources */,
 				848BD69F1AE7F0B10004E664 /* icon29.png in Resources */,
 			);
@@ -349,6 +366,19 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
+		};
+		84A92BE91AE8F007005E2095 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run d0b0c708e43f69036ebedad1766ad086074d30f6 afbb978d421ea300ef93b42e9cbb24582aa85ce48f6294656153d911727dafce";
 		};
 		A0A6EF5E2B15C996B83AE900 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -512,6 +542,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = OwnTracksActivo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -526,6 +560,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = OwnTracksActivo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

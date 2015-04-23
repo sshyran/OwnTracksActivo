@@ -9,6 +9,10 @@
 #import "AppDelegate.h"
 #import "ActivityModel.h"
 
+#import <Fabric/Fabric.h>
+#import <Crashlytics/Crashlytics.h>
+
+
 @interface AppDelegate ()
 
 @end
@@ -17,6 +21,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+
+    [Fabric with:@[CrashlyticsKit]];
 
     NSURL *bundleURL = [[NSBundle mainBundle] bundleURL];
     NSURL *otacPlistURL = [bundleURL URLByAppendingPathComponent:@"otac.plist"];
@@ -82,8 +88,19 @@
     [self saveContext];
 }
 
+- (void)reconnect {
+    [self.mqttSession closeAndWait];
+    _mqttSession.clientId = [[NSUserDefaults standardUserDefaults] stringForKey:@"ClientId"];
+    _mqttSession.userName = [[NSUserDefaults standardUserDefaults] stringForKey:@"UserName"];
+    _mqttSession.password = [[NSUserDefaults standardUserDefaults] stringForKey:@"Password"];
+    [self.mqttSession connectToHost:[[NSUserDefaults standardUserDefaults] stringForKey:@"Host"]
+                               port:(int)[[NSUserDefaults standardUserDefaults] integerForKey:@"Port"]
+                           usingSSL:[[NSUserDefaults standardUserDefaults] boolForKey:@"SSL"]];
+}
+
 #pragma mark - MQTTClient session
 @synthesize mqttSession = _mqttSession;
+@synthesize mqttError = _mqttError;
 
 - (MQTTSession *)mqttSession {
     if (_mqttSession != nil) {
@@ -144,6 +161,10 @@
     }
 }
 
+- (void)handleEvent:(MQTTSession *)session event:(MQTTSessionEvent)eventCode error:(NSError *)error {
+    _mqttError = error;
+}
+
 #pragma mark - Core Data stack
 
 @synthesize managedObjectContext = _managedObjectContext;
@@ -186,7 +207,7 @@
         error = [NSError errorWithDomain:@"YOUR_ERROR_DOMAIN" code:9999 userInfo:dict];
         // Replace this with code to handle the error appropriately.
         // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        CLSLog(@"Unresolved error %@, %@", error, [error userInfo]);
         abort();
     }
     
@@ -218,7 +239,7 @@
         if ([managedObjectContext hasChanges] && ![managedObjectContext save:&error]) {
             // Replace this implementation with code to handle the error appropriately.
             // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+            CLSLog(@"Unresolved error %@, %@", error, [error userInfo]);
             abort();
         }
     }

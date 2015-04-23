@@ -1,6 +1,20 @@
 OwnTracksActivo iOS 0.0 Release Notes
 =====================================
 
+## OwnTracks 0.0.2
+>Release date: 2015-04-23 for alpha testers only
+
+Getting rid of the early days problems and inconveniences
+
+[NEW] Use standard picker layout for jobs and tasks #7
+[NEW] Eliminate Refresh button - picker lists are guaranteed to be up-to-date #6
+[NEW] Limit the number of Log Entries introducing a "KeepDays": <number-of-days-to-keep" configuration value #5
+[NEW] Add timestamp to payload to allow queued transmission #4
+[NEW] The Navigation Bar Logo is now correctly sized and better visible #3
+[NEW] Coloring of the Navigation Bar Logo indicates MQTT connection status. Tapping the icon gives a meaningfull summary of config parameters and error situation with the option to reconnect #2
+[NEW] Integrated fabric.io/crashlytics --- just in case #1
+
+
 ## OwnTracks 0.0.1
 >Release date: 2015-04-22 for alpha testers only
 

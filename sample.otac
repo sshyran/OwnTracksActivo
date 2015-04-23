@@ -1,11 +1,12 @@
 {
 	"Publish": "owntracks/user/demo/jobs/currentjob",
-	"Host": "public.owntracks.org",
+	"Host": "nowhere.owntracks.org",
 	"Port": 8883,
 	"SSL":	true,
 	"ClientId": "owntracksjobs",
 	"UserName": "suer",
 	"Password": "paswsord",
-	"Subscription": "owntracks/user/demo/jobs/#"
+	"Subscription": "owntracks/user/demo/jobs/#",
+	"KeepDays": 7
 }
 

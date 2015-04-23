@@ -9,7 +9,11 @@
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
 
-@interface ViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate>
+@interface ViewController : UIViewController
+                    <UITableViewDataSource,
+                    UITableViewDelegate,
+                    NSFetchedResultsControllerDelegate,
+                    UIAlertViewDelegate>
 
 
 @end

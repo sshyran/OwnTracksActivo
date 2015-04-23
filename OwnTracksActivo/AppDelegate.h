@@ -19,9 +19,11 @@
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
 @property (readonly, strong, nonatomic) MQTTSession *mqttSession;
+@property (readonly, strong, nonatomic) NSError *mqttError;
 
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
+- (void)reconnect;
 
 
 @end

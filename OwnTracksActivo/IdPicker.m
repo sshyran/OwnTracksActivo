@@ -3,7 +3,7 @@
 //  Wegeheld
 //
 //  Created by Christoph Krey on 18.02.15.
-//  Copyright (c) 2015 Agentur fÃ¼r clevere StÃ¤dte. All rights reserved.
+//  Copyright (c) 2015 OwnTracks. All rights reserved.
 //
 
 #import "IdPicker.h"
@@ -28,13 +28,13 @@
                                    initWithTitle:NSLocalizedString(@"Done", @"Done")
                                    style:UIBarButtonItemStyleDone
                                    target:self action:@selector(done:)];
+    
     UIBarButtonItem *flexibleSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
                                                                                    target:nil
                                                                                    action:nil];
     UIToolbar *toolBar = [[UIToolbar alloc]initWithFrame:
                           CGRectMake(0, self.frame.size.height-50, 320, 50)];
-    NSArray *toolbarItems = [NSArray arrayWithObjects:
-                             flexibleSpace, doneButton, nil];
+    NSArray *toolbarItems = [NSArray arrayWithObjects: flexibleSpace, doneButton, nil];
     [toolBar setItems:toolbarItems];
     self.inputAccessoryView = toolBar;
 }
@@ -85,7 +85,6 @@
             }
         }
     }
-
 }
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
@@ -96,19 +95,7 @@
     return self.array.count + 1;
 }
 
-- (CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component {
-    int height = 33;
-    for (id item in self.array) {
-        if ([item respondsToSelector:@selector(name)]) {
-            NSString *string = [item performSelector:@selector(name) withObject:nil];
-            
-            height = MAX(ceil(string.length / 60.0) * 33, height);
-        }
-    }
-    return height;
-}
-
-- (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view {
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
     NSString *string;
     if (row > 0) {
         if ([self.array[row - 1] respondsToSelector:@selector(name)]) {
@@ -119,10 +106,7 @@
     } else {
         string = NSLocalizedString(@"Select", @"Select");
     }
-    UILabel *label = [[UILabel alloc] init];
-    label.numberOfLines = 5;
-    label.text = string;
-    return label;
+    return string;
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {

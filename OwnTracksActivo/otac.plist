@@ -18,5 +18,7 @@
 	<string></string>
 	<key>Subscription</key>
 	<string>owntracks/user/demo/jobs/currentjob</string>
+	<key>KeepDays</key>
+	<integer>7</integer>
 </dict>
 </plist>

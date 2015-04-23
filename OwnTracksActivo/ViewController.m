@@ -12,7 +12,10 @@
 #import "ActivityModel.h"
 #import "IdPicker.h"
 
+#import <Crashlytics/Crashlytics.h>
+
 @interface ViewController ()
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *home;
 @property (weak, nonatomic) IBOutlet IdPicker *tasks;
 @property (weak, nonatomic) IBOutlet IdPicker *jobs;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *play;
@@ -38,16 +41,48 @@
 - (void)viewDidAppear:(BOOL)animated {
     self.timer = [NSTimer timerWithTimeInterval:1.0 target:self selector:@selector(tick:) userInfo:nil repeats:true];
     [[NSRunLoop currentRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
+    
+    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    [appDelegate.mqttSession addObserver:self forKeyPath:@"status"
+                                 options:NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew
+                                 context:nil];
     [self setStatus];
-    [self refresh:nil];
-    [self setStatus];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [self.timer invalidate];
+    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    [appDelegate.mqttSession removeObserver:self forKeyPath:@"status" context:nil];
+
+    [super viewWillDisappear:animated];
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    switch (appDelegate.mqttSession.status) {
+        case MQTTSessionStatusConnected:
+            self.home.tintColor = [UIColor greenColor];
+            break;
+        case MQTTSessionStatusConnecting:
+        case MQTTSessionStatusCreated:
+        case MQTTSessionStatusDisconnecting:
+            self.home.tintColor = [UIColor yellowColor];
+            break;
+        case MQTTSessionStatusClosed:
+        case MQTTSessionStatusError:
+        default:
+            self.home.tintColor = [UIColor redColor];
+            break;
+    }
 }
 
 - (void)setStatus {
     if ([ActivityModel sharedInstance].activity) {
         self.jobs.enabled = false;
+        self.jobs.array = [[ActivityModel sharedInstance] jobs];
         self.jobs.arrayId = (int)[[ActivityModel sharedInstance].activity.jobIdentifier integerValue];
         self.tasks.enabled = false;
+        self.tasks.array = [[ActivityModel sharedInstance] tasksForJob:self.jobs.arrayId];
         self.tasks.arrayId = (int)[[ActivityModel sharedInstance].activity.taskIdentifier integerValue];
         if ([ActivityModel sharedInstance].activity.lastStart) {
             self.play.enabled = false;
@@ -76,14 +111,17 @@
     }
 }
 
-- (IBAction)refresh:(UIBarButtonItem *)sender {
+- (IBAction)jobStarting:(IdPicker *)sender {
     self.jobs.array = [[ActivityModel sharedInstance] jobs];
-    self.tasks.array = [[ActivityModel sharedInstance] tasksForJob:self.jobs.arrayId];
 }
 
 - (IBAction)job:(IdPicker *)sender {
-    self.tasks.array = [[ActivityModel sharedInstance] tasksForJob:self.jobs.arrayId];
+    self.tasks.arrayId = 0;
     [self setStatus];
+}
+
+- (IBAction)taskStarting:(IdPicker *)sender {
+    self.tasks.array = [[ActivityModel sharedInstance] tasksForJob:self.jobs.arrayId];
 }
 
 - (IBAction)task:(IdPicker *)sender {
@@ -91,12 +129,34 @@
 }
 
 - (IBAction)home:(UIBarButtonItem *)sender {
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"standardDefaults"
-                                                        message:[[[NSUserDefaults standardUserDefaults] dictionaryRepresentation] description]
-                                                       delegate:nil
-                                              cancelButtonTitle:nil
-                                              otherButtonTitles:@"OK", nil];
+    NSMutableDictionary *config = [[NSMutableDictionary alloc] init];
+    for (NSString *key in @[@"Publish",
+                            @"Host",
+                            @"Port",
+                            @"SSL",
+                            @"ClientId",
+                            @"UserName",
+                            @"Password",
+                            @"Subscription",
+                            @"KeepDays"]) {
+        [config setObject:[[NSUserDefaults standardUserDefaults] objectForKey:key] forKey:key];
+    }
+    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    [config setObject:appDelegate.mqttError ? [appDelegate.mqttError description] : @"-" forKey:@"MQTTError"];
+
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Configuration"
+                                                        message:[config description]
+                                                       delegate:self
+                                              cancelButtonTitle:@"Cancel"
+                                              otherButtonTitles:@"Reconnect", nil];
     [alertView show];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 1) {
+        AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+        [appDelegate reconnect];
+    }
 }
 
 - (void)tick:(NSTimer *)timer {
@@ -111,11 +171,6 @@
     } else {
         self.status.text = @"";
     }
-}
-
-- (void)viewWillDisappear:(BOOL)animated {
-    [self.timer invalidate];
-    [super viewWillDisappear:animated];
 }
 
 - (IBAction)stop:(UIBarButtonItem *)sender {
@@ -156,7 +211,7 @@
     if (![self.fetchedResultsController performFetch:&error]) {
         // Replace this implementation with code to handle     the error appropriately.
         // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        CLSLog(@"Unresolved error %@, %@", error, [error userInfo]);
         abort();
     }
 
@@ -249,7 +304,7 @@
 
         NSError *error = nil;
         if (![context save:&error]) {
-            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+            CLSLog(@"Unresolved error %@, %@", error, [error userInfo]);
             abort();
         }
     }

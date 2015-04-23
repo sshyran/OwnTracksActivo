@@ -5,7 +5,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--OwnTracksJobs-->
+        <!--OwnTracksActivo-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
@@ -26,6 +26,7 @@
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <action selector="job:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="W5X-oq-TeD"/>
+                                    <action selector="jobStarting:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="Fml-tW-DSI"/>
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="select task" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="i6r-Nj-N1g" customClass="IdPicker">
@@ -37,6 +38,7 @@
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <action selector="task:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="fOJ-pS-LSf"/>
+                                    <action selector="taskStarting:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="wlL-rU-f0f"/>
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bJL-ml-DcS">
@@ -45,7 +47,7 @@
                                     <constraint firstAttribute="height" constant="21" id="yYl-R9-KqI"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yld-qT-lsK">
@@ -86,13 +88,13 @@
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rXU-QG-vKc">
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pDX-D6-iLD">
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -132,19 +134,15 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="OwnTracksJobs" id="LZ8-SC-Zo3">
+                    <navigationItem key="navigationItem" title="OwnTracksActivo" id="LZ8-SC-Zo3">
                         <barButtonItem key="leftBarButtonItem" image="Logo" id="vCp-w6-Y6h">
                             <connections>
                                 <action selector="home:" destination="BYZ-38-t0r" id="zIQ-1r-xna"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="sfb-69-do0">
-                            <connections>
-                                <action selector="refresh:" destination="BYZ-38-t0r" id="mnY-tb-z6N"/>
-                            </connections>
-                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="home" destination="vCp-w6-Y6h" id="WSg-Ul-EYT"/>
                         <outlet property="jobs" destination="cdn-g4-Hq0" id="REv-9s-fZD"/>
                         <outlet property="logs" destination="Jit-XX-ZEZ" id="wZz-uf-5sD"/>
                         <outlet property="pause" destination="d0h-XA-U97" id="em6-V1-H9Y"/>
@@ -178,6 +176,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Logo" width="22" height="22"/>
+        <image name="Logo" width="33" height="33"/>
     </resources>
 </document>

@@ -69,10 +69,21 @@ static ActivityModel *theActivityModel;
                        [self getTask:[self.activity.taskIdentifier integerValue]
                                inJob:[self.activity.jobIdentifier integerValue]].name]];
             AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-            [appDelegate.mqttSession publishData:[[NSString stringWithFormat:@"%@ %@", self.activity.jobIdentifier, self.activity.taskIdentifier] dataUsingEncoding:NSUTF8StringEncoding]
+            [appDelegate.mqttSession publishData:[[NSString stringWithFormat:@"%@ %@",
+                                                   self.activity.jobIdentifier,
+                                                   self.activity.taskIdentifier] dataUsingEncoding:NSUTF8StringEncoding]
                                          onTopic:[[NSUserDefaults standardUserDefaults] stringForKey:@"Publish"]
                                                   retain:true
                                                   qos:MQTTQosLevelExactlyOnce];
+            [appDelegate.mqttSession publishData:[[NSString stringWithFormat:@"%@ %@",
+                                                   self.activity.jobIdentifier,
+                                                   self.activity.taskIdentifier] dataUsingEncoding:NSUTF8StringEncoding]
+                                         onTopic:[NSString stringWithFormat:@"%@/%.0f",
+                                                  [[NSUserDefaults standardUserDefaults] stringForKey:@"Publish"],
+                                                  [[NSDate date] timeIntervalSince1970]]
+                                          retain:true
+                                             qos:MQTTQosLevelAtLeastOnce];
+
             return true;
         } else  {
             return false;
@@ -94,6 +105,12 @@ static ActivityModel *theActivityModel;
                                          onTopic:[[NSUserDefaults standardUserDefaults] stringForKey:@"Publish"]
                                           retain:true
                                              qos:MQTTQosLevelExactlyOnce];
+            [appDelegate.mqttSession publishData:[@"0 0" dataUsingEncoding:NSUTF8StringEncoding]
+                                         onTopic:[NSString stringWithFormat:@"%@/%.0f",
+                                                  [[NSUserDefaults standardUserDefaults] stringForKey:@"Publish"],
+                                                  [[NSDate date] timeIntervalSince1970]]
+                                          retain:true
+                                             qos:MQTTQosLevelAtLeastOnce];
             [self log:[NSString stringWithFormat:@"Paused %@/%@ after %.0f seconds",
                        [self getJob:[self.activity.jobIdentifier integerValue]].name,
                        [self getTask:[self.activity.taskIdentifier integerValue]
@@ -150,6 +167,19 @@ static ActivityModel *theActivityModel;
                                              inManagedObjectContext:appDelegate.managedObjectContext];
     log.timestamp = [NSDate date];
     log.content = content;
+    
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Log"];
+    NSDate *oldDays = [NSDate dateWithTimeIntervalSinceNow:
+                       -[[NSUserDefaults standardUserDefaults] integerForKey:@"KeepDays"] * 24 * 3600];
+    request.predicate = [NSPredicate predicateWithFormat:@"timestamp < %@", oldDays];
+    
+    NSArray *matches = [appDelegate.managedObjectContext executeFetchRequest:request error:nil];
+    if (matches) {
+        for (log in matches) {
+            [appDelegate.managedObjectContext deleteObject:log];
+        }
+    }
+    
     [appDelegate saveContext];
 }
 
