@@ -20,7 +20,6 @@
 		848BD6851AE7A24B0004E664 /* ActivityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 848BD6841AE7A24B0004E664 /* ActivityModel.m */; };
 		848BD6881AE7AA7F0004E664 /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = 848BD6871AE7AA7F0004E664 /* Activity.m */; };
 		848BD68B1AE7AA800004E664 /* Job.m in Sources */ = {isa = PBXBuildFile; fileRef = 848BD68A1AE7AA800004E664 /* Job.m */; };
-		848BD68E1AE7AA800004E664 /* Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 848BD68D1AE7AA800004E664 /* Log.m */; };
 		848BD6911AE7AA800004E664 /* Task.m in Sources */ = {isa = PBXBuildFile; fileRef = 848BD6901AE7AA800004E664 /* Task.m */; };
 		848BD6931AE7C3350004E664 /* otac.plist in Resources */ = {isa = PBXBuildFile; fileRef = 848BD6921AE7C3350004E664 /* otac.plist */; };
 		848BD69F1AE7F0B10004E664 /* icon29.png in Resources */ = {isa = PBXBuildFile; fileRef = 848BD6941AE7F0B10004E664 /* icon29.png */; };
@@ -36,6 +35,13 @@
 		848BD6A91AE7F0B10004E664 /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = 848BD69E1AE7F0B10004E664 /* iTunesArtwork.png */; };
 		84A92BEC1AE8F036005E2095 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A92BEA1AE8F036005E2095 /* Crashlytics.framework */; };
 		84A92BED1AE8F036005E2095 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A92BEB1AE8F036005E2095 /* Fabric.framework */; };
+		84D113A21AECBAB7005F8F4B /* Play.svg in Resources */ = {isa = PBXBuildFile; fileRef = 84D113A01AECBAB7005F8F4B /* Play.svg */; };
+		84D113A31AECBAB7005F8F4B /* Stop.svg in Resources */ = {isa = PBXBuildFile; fileRef = 84D113A11AECBAB7005F8F4B /* Stop.svg */; };
+		84D113A81AECBBEB005F8F4B /* Play.png in Resources */ = {isa = PBXBuildFile; fileRef = 84D113A41AECBBEB005F8F4B /* Play.png */; };
+		84D113A91AECBBEB005F8F4B /* Play@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84D113A51AECBBEB005F8F4B /* Play@2x.png */; };
+		84D113AA1AECBBEB005F8F4B /* Stop.png in Resources */ = {isa = PBXBuildFile; fileRef = 84D113A61AECBBEB005F8F4B /* Stop.png */; };
+		84D113AB1AECBBEB005F8F4B /* Stop@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84D113A71AECBBEB005F8F4B /* Stop@2x.png */; };
+		84D113B11AECC30B005F8F4B /* Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D113B01AECC30B005F8F4B /* Log.m */; };
 		84DAC6071AE8F4B8000FB533 /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84DAC6061AE8F4B8000FB533 /* iTunesArtwork@2x.png */; };
 		84DAC60C1AE8F738000FB533 /* Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 84DAC6081AE8F738000FB533 /* Logo.png */; };
 		84DAC60D1AE8F738000FB533 /* Logo33.png in Resources */ = {isa = PBXBuildFile; fileRef = 84DAC6091AE8F738000FB533 /* Logo33.png */; };
@@ -78,8 +84,6 @@
 		848BD6871AE7AA7F0004E664 /* Activity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Activity.m; sourceTree = "<group>"; };
 		848BD6891AE7AA800004E664 /* Job.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Job.h; sourceTree = "<group>"; };
 		848BD68A1AE7AA800004E664 /* Job.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Job.m; sourceTree = "<group>"; };
-		848BD68C1AE7AA800004E664 /* Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Log.h; sourceTree = "<group>"; };
-		848BD68D1AE7AA800004E664 /* Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Log.m; sourceTree = "<group>"; };
 		848BD68F1AE7AA800004E664 /* Task.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Task.h; sourceTree = "<group>"; };
 		848BD6901AE7AA800004E664 /* Task.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Task.m; sourceTree = "<group>"; };
 		848BD6921AE7C3350004E664 /* otac.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = otac.plist; sourceTree = "<group>"; };
@@ -96,6 +100,15 @@
 		848BD69E1AE7F0B10004E664 /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
 		84A92BEA1AE8F036005E2095 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		84A92BEB1AE8F036005E2095 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		84D1139F1AECB10E005F8F4B /* OwnTracksActivo 0.0.3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "OwnTracksActivo 0.0.3.xcdatamodel"; sourceTree = "<group>"; };
+		84D113A01AECBAB7005F8F4B /* Play.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Play.svg; sourceTree = "<group>"; };
+		84D113A11AECBAB7005F8F4B /* Stop.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Stop.svg; sourceTree = "<group>"; };
+		84D113A41AECBBEB005F8F4B /* Play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Play.png; sourceTree = "<group>"; };
+		84D113A51AECBBEB005F8F4B /* Play@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Play@2x.png"; sourceTree = "<group>"; };
+		84D113A61AECBBEB005F8F4B /* Stop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Stop.png; sourceTree = "<group>"; };
+		84D113A71AECBBEB005F8F4B /* Stop@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Stop@2x.png"; sourceTree = "<group>"; };
+		84D113AF1AECC30B005F8F4B /* Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Log.h; sourceTree = "<group>"; };
+		84D113B01AECC30B005F8F4B /* Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Log.m; sourceTree = "<group>"; };
 		84DAC6061AE8F4B8000FB533 /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
 		84DAC6081AE8F738000FB533 /* Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo.png; sourceTree = "<group>"; };
 		84DAC6091AE8F738000FB533 /* Logo33.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo33.png; sourceTree = "<group>"; };
@@ -167,10 +180,10 @@
 		848BD6531AE78FC90004E664 /* OwnTracksActivo */ = {
 			isa = PBXGroup;
 			children = (
+				84D113AF1AECC30B005F8F4B /* Log.h */,
+				84D113B01AECC30B005F8F4B /* Log.m */,
 				848BD68F1AE7AA800004E664 /* Task.h */,
 				848BD6901AE7AA800004E664 /* Task.m */,
-				848BD68C1AE7AA800004E664 /* Log.h */,
-				848BD68D1AE7AA800004E664 /* Log.m */,
 				848BD6891AE7AA800004E664 /* Job.h */,
 				848BD68A1AE7AA800004E664 /* Job.m */,
 				848BD6861AE7AA7F0004E664 /* Activity.h */,
@@ -186,6 +199,10 @@
 				848BD6841AE7A24B0004E664 /* ActivityModel.m */,
 				848BD6611AE78FC90004E664 /* Main.storyboard */,
 				848BD6641AE78FC90004E664 /* Images.xcassets */,
+				84D113A41AECBBEB005F8F4B /* Play.png */,
+				84D113A51AECBBEB005F8F4B /* Play@2x.png */,
+				84D113A61AECBBEB005F8F4B /* Stop.png */,
+				84D113A71AECBBEB005F8F4B /* Stop@2x.png */,
 				848BD6661AE78FC90004E664 /* LaunchScreen.xib */,
 				848BD6941AE7F0B10004E664 /* icon29.png */,
 				848BD6951AE7F0B10004E664 /* icon29@2x.png */,
@@ -203,6 +220,8 @@
 				84DAC6091AE8F738000FB533 /* Logo33.png */,
 				84DAC60A1AE8F738000FB533 /* Logo33@2x.png */,
 				84DAC60B1AE8F738000FB533 /* Logo33@3x.png */,
+				84D113A01AECBAB7005F8F4B /* Play.svg */,
+				84D113A11AECBAB7005F8F4B /* Stop.svg */,
 				848BD65B1AE78FC90004E664 /* OwnTracksActivo.xcdatamodeld */,
 				848BD6541AE78FC90004E664 /* Supporting Files */,
 			);
@@ -321,9 +340,13 @@
 			files = (
 				848BD6931AE7C3350004E664 /* otac.plist in Resources */,
 				848BD6631AE78FC90004E664 /* Main.storyboard in Resources */,
+				84D113AA1AECBBEB005F8F4B /* Stop.png in Resources */,
 				84DAC60D1AE8F738000FB533 /* Logo33.png in Resources */,
 				848BD6A81AE7F0B10004E664 /* icon76@2x.png in Resources */,
 				848BD6A91AE7F0B10004E664 /* iTunesArtwork.png in Resources */,
+				84D113A81AECBBEB005F8F4B /* Play.png in Resources */,
+				84D113A21AECBAB7005F8F4B /* Play.svg in Resources */,
+				84D113AB1AECBBEB005F8F4B /* Stop@2x.png in Resources */,
 				848BD6A21AE7F0B10004E664 /* icon40.png in Resources */,
 				848BD6A31AE7F0B10004E664 /* icon40@2x.png in Resources */,
 				848BD6A01AE7F0B10004E664 /* icon29@2x.png in Resources */,
@@ -334,10 +357,12 @@
 				848BD6A41AE7F0B10004E664 /* icon40@3x.png in Resources */,
 				84DAC6071AE8F4B8000FB533 /* iTunesArtwork@2x.png in Resources */,
 				84DAC60F1AE8F738000FB533 /* Logo33@3x.png in Resources */,
+				84D113A31AECBAB7005F8F4B /* Stop.svg in Resources */,
 				848BD6681AE78FC90004E664 /* LaunchScreen.xib in Resources */,
 				848BD6651AE78FC90004E664 /* Images.xcassets in Resources */,
 				84DAC60E1AE8F738000FB533 /* Logo33@2x.png in Resources */,
 				848BD6A71AE7F0B10004E664 /* icon76.png in Resources */,
+				84D113A91AECBBEB005F8F4B /* Play@2x.png in Resources */,
 				848BD69F1AE7F0B10004E664 /* icon29.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -406,9 +431,9 @@
 				848BD65D1AE78FC90004E664 /* OwnTracksActivo.xcdatamodeld in Sources */,
 				848BD65A1AE78FC90004E664 /* AppDelegate.m in Sources */,
 				848BD6601AE78FC90004E664 /* ViewController.m in Sources */,
-				848BD68E1AE7AA800004E664 /* Log.m in Sources */,
 				848BD68B1AE7AA800004E664 /* Job.m in Sources */,
 				848BD67F1AE7A1E30004E664 /* IdPicker.m in Sources */,
+				84D113B11AECC30B005F8F4B /* Log.m in Sources */,
 				848BD6851AE7A24B0004E664 /* ActivityModel.m in Sources */,
 				848BD6881AE7AA7F0004E664 /* Activity.m in Sources */,
 				848BD6571AE78FC90004E664 /* main.m in Sources */,
@@ -641,9 +666,10 @@
 		848BD65B1AE78FC90004E664 /* OwnTracksActivo.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				84D1139F1AECB10E005F8F4B /* OwnTracksActivo 0.0.3.xcdatamodel */,
 				848BD65C1AE78FC90004E664 /* OwnTracksActivo.xcdatamodel */,
 			);
-			currentVersion = 848BD65C1AE78FC90004E664 /* OwnTracksActivo.xcdatamodel */;
+			currentVersion = 84D1139F1AECB10E005F8F4B /* OwnTracksActivo 0.0.3.xcdatamodel */;
 			path = OwnTracksActivo.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

@@ -19,7 +19,6 @@
 - (BOOL)start;
 - (BOOL)pause;
 - (NSTimeInterval)actualDuration;
-- (BOOL)stop;
 
 - (NSArray *)jobs;
 - (NSArray *)tasksForJob:(NSUInteger)job;
@@ -29,6 +28,7 @@
 - (Task *)getTask:(NSUInteger)taskIdentifier inJob:(NSUInteger)jobIdentifier ;
 - (BOOL)deleteJob:(NSUInteger)jobIdentifier;
 - (BOOL)deleteTask:(NSUInteger)taskIdentifier inJob:(NSUInteger)jobIdentifier ;
+- (NSString *)durationString;
 
 
 @end

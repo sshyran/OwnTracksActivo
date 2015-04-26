@@ -51,9 +51,6 @@ static ActivityModel *theActivityModel;
         self.activity.taskIdentifier = [NSNumber numberWithUnsignedInteger:taskIdentifier];
         self.activity.lastStart = nil;
         self.activity.duration = [NSNumber numberWithDouble:0.0];
-        [self log:[NSString stringWithFormat:@"Created %@/%@",
-                   self.activity.jobIdentifier,
-                   self.activity.taskIdentifier]];
         return true;
     } else {
         return false;
@@ -64,7 +61,8 @@ static ActivityModel *theActivityModel;
     if (self.activity) {
         if (self.activity.lastStart == nil) {
             self.activity.lastStart = [NSDate date];
-            [self log:[NSString stringWithFormat:@"Started %@/%@",
+            [self log:1
+              content:[NSString stringWithFormat:@"%@/%@",
                        [self getJob:[self.activity.jobIdentifier integerValue]].name,
                        [self getTask:[self.activity.taskIdentifier integerValue]
                                inJob:[self.activity.jobIdentifier integerValue]].name]];
@@ -111,13 +109,13 @@ static ActivityModel *theActivityModel;
                                                   [[NSDate date] timeIntervalSince1970]]
                                           retain:true
                                              qos:MQTTQosLevelAtLeastOnce];
-            [self log:[NSString stringWithFormat:@"Paused %@/%@ after %.0f seconds",
-                       [self getJob:[self.activity.jobIdentifier integerValue]].name,
-                       [self getTask:[self.activity.taskIdentifier integerValue]
-                               inJob:[self.activity.jobIdentifier integerValue]].name,
-                       [self.activity.duration doubleValue]
-                       ]
+            [self log:2
+              content:[NSString stringWithFormat:@"%@", [self durationString]]
              ];
+            
+            [appDelegate.managedObjectContext deleteObject:self.activity];
+            self.activity = nil;
+            
             return true;
         } else  {
             return false;
@@ -141,31 +139,12 @@ static ActivityModel *theActivityModel;
     
 }
 
-- (BOOL)stop {
-    if (self.activity) {
-        if ([self pause]) {
-            [self log:[NSString stringWithFormat:@"Stopped %@/%@ after %.0f seconds",
-                       [self getJob:[self.activity.jobIdentifier integerValue]].name,
-                       [self getTask:[self.activity.taskIdentifier integerValue]
-                               inJob:[self.activity.jobIdentifier integerValue]].name,
-                       [self.activity.duration doubleValue]
-                       ]
-             ];
-             self.activity = nil;
-            return true;
-        } else  {
-            return false;
-        }
-    } else {
-        return false;
-    }
-}
-
-- (void)log:(NSString *)content {
+- (void)log:(int)status content:(NSString *)content {
     AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
     Log *log = [NSEntityDescription insertNewObjectForEntityForName:@"Log"
                                              inManagedObjectContext:appDelegate.managedObjectContext];
     log.timestamp = [NSDate date];
+    log.status = [NSNumber numberWithInt:status];
     log.content = content;
     
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Log"];
@@ -284,6 +263,23 @@ static ActivityModel *theActivityModel;
     } else {
         return false;
     }
+}
+
+- (NSString *)durationString {
+    NSString *duration;
+    NSTimeInterval interval = [self actualDuration];
+    if (interval >= 3600) {
+        duration = [NSString stringWithFormat:@"%d hours %d minutes",
+                    (int)(interval / 3600),
+                    (int)(fmod(interval, 3600)/ 60)
+                    ];
+    } else {
+        duration = [NSString stringWithFormat:@"%d minutes %d seconds",
+                    (int)(interval / 60),
+                    (int)fmod(interval, 60)
+                    ];
+    }
+    return duration;
 }
 
 @end

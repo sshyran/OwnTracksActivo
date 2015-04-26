@@ -20,7 +20,6 @@
 @property (weak, nonatomic) IBOutlet IdPicker *jobs;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *play;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *pause;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *stop;
 @property (weak, nonatomic) IBOutlet UILabel *status;
 @property (weak, nonatomic) IBOutlet UITableView *logs;
 
@@ -79,29 +78,34 @@
 - (void)setStatus {
     if ([ActivityModel sharedInstance].activity) {
         self.jobs.enabled = false;
+        self.jobs.borderStyle = UITextBorderStyleNone;
         self.jobs.array = [[ActivityModel sharedInstance] jobs];
         self.jobs.arrayId = (int)[[ActivityModel sharedInstance].activity.jobIdentifier integerValue];
+        
         self.tasks.enabled = false;
+        self.tasks.borderStyle = UITextBorderStyleNone;
         self.tasks.array = [[ActivityModel sharedInstance] tasksForJob:self.jobs.arrayId];
         self.tasks.arrayId = (int)[[ActivityModel sharedInstance].activity.taskIdentifier integerValue];
+        
         if ([ActivityModel sharedInstance].activity.lastStart) {
             self.play.enabled = false;
-            self.stop.enabled = true;
             self.pause.enabled = true;
         } else {
             self.play.enabled = true;
-            self.stop.enabled = false;
             self.pause.enabled = false;
         }
     } else {
         self.jobs.enabled = true;
+        self.jobs.borderStyle = UITextBorderStyleRoundedRect;
+        
         self.play.enabled = false;
-        self.stop.enabled = false;
         self.pause.enabled = false;
         if (self.jobs.arrayId == 0) {
             self.tasks.enabled = false;
+            self.tasks.borderStyle = UITextBorderStyleNone;
         } else {
             self.tasks.enabled = true;
+            self.tasks.borderStyle = UITextBorderStyleRoundedRect;
         }
         if (self.tasks.arrayId == 0) {
             self.play.enabled = false;
@@ -162,21 +166,18 @@
 - (void)tick:(NSTimer *)timer {
     if ([ActivityModel sharedInstance].activity) {
         if ([ActivityModel sharedInstance].activity.lastStart) {
-            self.status.text = [NSString stringWithFormat:@"working since %.0f seconds",
-                                [[ActivityModel sharedInstance] actualDuration]];
+            self.status.text = [NSString stringWithFormat:@"working for %@",
+                                [[ActivityModel sharedInstance] durationString]];
         } else {
-            self.status.text = [NSString stringWithFormat:@"work paused after %.0f seconds",
-                                [[ActivityModel sharedInstance] actualDuration]];
+            self.status.text = [NSString stringWithFormat:@"stopped after %@",
+                                [[ActivityModel sharedInstance] durationString]
+                                ];
         }
     } else {
         self.status.text = @"";
     }
 }
 
-- (IBAction)stop:(UIBarButtonItem *)sender {
-    [[ActivityModel sharedInstance] stop];
-    [self setStatus];
-}
 - (IBAction)pause:(UIBarButtonItem *)sender {
     [[ActivityModel sharedInstance] pause];
     [self setStatus];
@@ -344,7 +345,27 @@
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
     Log *log = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.detailTextLabel.text = [NSDateFormatter localizedStringFromDate:log.timestamp dateStyle:NSDateFormatterShortStyle timeStyle:NSDateFormatterShortStyle];
+    
+    if (log.status) {
+        switch ([log.status intValue]) {
+            case 2:
+                cell.imageView.image = [UIImage imageNamed:@"Stop"];
+                break;
+            case 1:
+                cell.imageView.image = [UIImage imageNamed:@"Play"];
+                break;
+            case 0:
+            default:
+                cell.imageView.image = [UIImage imageNamed:@"Logo"];
+                break;
+        }
+    } else {
+        cell.imageView.image = nil;
+    }
+    
+    cell.detailTextLabel.text = [NSDateFormatter localizedStringFromDate:log.timestamp
+                                                               dateStyle:NSDateFormatterShortStyle
+                                                               timeStyle:NSDateFormatterShortStyle];
     
     cell.textLabel.text = log.content;
 }
