@@ -1,7 +1,7 @@
 OwnTracksActivo iOS 0.0 Release Notes
 =====================================
 
-## OwnTracksActivo 0.0.2
+## OwnTracksActivo 0.0.3
 >Release date: 2015-04-26 for alpha testers only
 
 A number of UI enhancements
