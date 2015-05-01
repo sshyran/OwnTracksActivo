@@ -12,7 +12,6 @@
 #import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
 
-
 @interface AppDelegate ()
 
 @end
@@ -123,8 +122,14 @@
     return _mqttSession;
 }
 
-- (void)newMessage:(MQTTSession *)session data:(NSData *)data onTopic:(NSString *)topic qos:(MQTTQosLevel)qos retained:(BOOL)retained mid:(unsigned int)mid {
+- (void)newMessage:(MQTTSession *)session
+              data:(NSData *)data
+           onTopic:(NSString *)topic
+               qos:(MQTTQosLevel)qos
+          retained:(BOOL)retained
+               mid:(unsigned int)mid {
     NSArray *topicComponents = [topic componentsSeparatedByString:@"/"];
+    
     int job = -1;
     for (int i = 0; i < topicComponents.count; i++) {
         NSString *component = topicComponents[i];
@@ -149,6 +154,60 @@
             } else {
                 [[ActivityModel sharedInstance] deleteTask:[topicComponents[job + 2] integerValue]
                                                      inJob:[topicComponents[job + 1] integerValue]];
+            }
+        }
+    }
+    
+    int place = -1;
+    for (int i = 0; i < topicComponents.count; i++) {
+        NSString *component = topicComponents[i];
+        if ([component isEqualToString:@"place"]) {
+            place = i;
+            break;
+        }
+    }
+    if (place > -1) {
+        if (topicComponents.count == place + 2) {
+            if (data.length) {
+                NSString *dataString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+                NSArray *tokens = [dataString componentsSeparatedByString:@" "];
+                if (tokens.count == 4) {
+                    [[ActivityModel sharedInstance] addPlace:[topicComponents[place + 1] integerValue]
+                                                        name:tokens[0]
+                                                    latitude:[tokens[1] doubleValue]
+                                                   longitude:[tokens[2] doubleValue]
+                                                      radius:[tokens[3] doubleValue]];
+
+                }
+            } else {
+                [[ActivityModel sharedInstance] deletePlace:[topicComponents[place + 1] integerValue]];
+            }
+        }
+    }
+    
+    int machine = -1;
+    for (int i = 0; i < topicComponents.count; i++) {
+        NSString *component = topicComponents[i];
+        if ([component isEqualToString:@"machine"]) {
+            machine = i;
+            break;
+        }
+    }
+    if (machine > -1) {
+        if (topicComponents.count == machine + 2) {
+            if (data.length) {
+                NSString *dataString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+                NSArray *tokens = [dataString componentsSeparatedByString:@" "];
+                if (tokens.count == 4) {
+                    [[ActivityModel sharedInstance] addMachine:[topicComponents[machine + 1] integerValue]
+                                                          name:tokens[0]
+                                                          uuid:tokens[1]
+                                                         major:[tokens[2] intValue]
+                                                         minor:[tokens[3] intValue]];
+                    
+                }
+            } else {
+                [[ActivityModel sharedInstance] deleteMachine:[topicComponents[machine + 1] integerValue]];
             }
         }
     }
@@ -214,7 +273,7 @@
         error = [NSError errorWithDomain:@"YOUR_ERROR_DOMAIN" code:9999 userInfo:dict];
         // Replace this with code to handle the error appropriately.
         // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-        CLSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
         abort();
     }
     
@@ -246,7 +305,7 @@
         if ([managedObjectContext hasChanges] && ![managedObjectContext save:&error]) {
             // Replace this implementation with code to handle the error appropriately.
             // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-            CLSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
             abort();
         }
     }

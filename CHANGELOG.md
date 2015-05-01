@@ -1,5 +1,14 @@
-OwnTracksActivo iOS 0.0 Release Notes
+OwnTracksActivo iOS 0.1 Release Notes
 =====================================
+
+## OwnTracksActivo 0.1.0
+>Release date: 2015-05-01 for alpha testers only
+
+[NEW] Additional activity attributes Place and Machine (setup as in sample.sh)
+[NEW] Automatic selection of Place based on location 
+[NEW] Automatic selection of Machine based on iBeacon
+[NEW] Use Pause instead of Stop to continue with same selections later
+
 
 ## OwnTracksActivo 0.0.3
 >Release date: 2015-04-26 for alpha testers only

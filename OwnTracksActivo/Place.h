@@ -1,5 +1,5 @@
 //
-//  Task.h
+//  Place.h
 //  OwnTracksActivo
 //
 //  Created by Christoph Krey on 30.04.15.
@@ -10,10 +10,12 @@
 #import <CoreData/CoreData.h>
 
 
-@interface Task : NSManagedObject
+@interface Place : NSManagedObject
 
 @property (nonatomic, retain) NSNumber * identifier;
-@property (nonatomic, retain) NSNumber * jobIdentifier;
+@property (nonatomic, retain) NSNumber * radius;
 @property (nonatomic, retain) NSString * name;
+@property (nonatomic, retain) NSNumber * latitude;
+@property (nonatomic, retain) NSNumber * longitude;
 
 @end

@@ -18,13 +18,18 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *home;
 @property (weak, nonatomic) IBOutlet IdPicker *tasks;
 @property (weak, nonatomic) IBOutlet IdPicker *jobs;
+@property (weak, nonatomic) IBOutlet IdPicker *places;
+@property (weak, nonatomic) IBOutlet IdPicker *machines;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *play;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *pause;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *stop;
 @property (weak, nonatomic) IBOutlet UILabel *status;
 @property (weak, nonatomic) IBOutlet UITableView *logs;
 
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) NSTimer *timer;
+@property (nonatomic) BOOL automaticPlace;
+@property (nonatomic) BOOL automaticMachine;
 
 @end
 
@@ -35,6 +40,56 @@
     self.logs.delegate = self;
     self.logs.dataSource = self;
     [self.logs reloadData];
+    
+    [LocationManager sharedInstance].delegate = self;;
+    [[LocationManager sharedInstance] start];
+    [[LocationManager sharedInstance] resetRegions];
+    NSArray *beacons = [[NSUserDefaults standardUserDefaults] arrayForKey:@"Beacons"];
+    for (NSString *uuidString in beacons) {
+        NSUUID *uuid = [[NSUUID alloc] initWithUUIDString:uuidString];
+        CLBeaconRegion *beaconRegion = [[CLBeaconRegion alloc] initWithProximityUUID:uuid
+                                                                      identifier:uuidString];
+        [[LocationManager sharedInstance] startRegion:beaconRegion];
+    }
+}
+
+- (void)regionEvent:(CLRegion *)region enter:(BOOL)enter {
+   //
+}
+
+- (void)regionState:(CLRegion *)region inside:(BOOL)inside {
+   //
+}
+
+- (void)beaconInRange:(CLBeacon *)beacon {
+    if (self.automaticMachine) {
+        NSArray *machines = [[ActivityModel sharedInstance] machines];
+        for (Machine *machine in machines) {
+            if ([machine.uuid isEqualToString:beacon.proximityUUID.UUIDString] &&
+                ([machine.major intValue] == 0 || [machine.major intValue] == [beacon.major intValue]) &&
+                ([machine.minor intValue] == 0 || [machine.minor intValue] == [beacon.minor intValue])) {
+                self.machines.arrayId = [machine.identifier intValue];
+                break;
+            }
+        }
+    }
+}
+
+- (void)newLocation {
+    if (self.automaticPlace) {
+        NSArray *places = [[ActivityModel sharedInstance] places];
+        for (Place *place in places) {
+            CLCircularRegion *circularRegion = [[CLCircularRegion alloc]
+                                                initWithCenter:CLLocationCoordinate2DMake([place.latitude doubleValue],
+                                                                                          [place.longitude doubleValue])
+                                                radius:[place.radius doubleValue]
+                                                identifier:place.name];
+            if ([circularRegion containsCoordinate:[LocationManager sharedInstance].location.coordinate]) {
+                self.places.arrayId = [place.identifier intValue];
+                break;
+            }
+        }
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -76,30 +131,58 @@
 }
 
 - (void)setStatus {
+    self.jobs.array = [[ActivityModel sharedInstance] jobs];
+    self.places.array = [[ActivityModel sharedInstance] places];
+    self.machines.array = [[ActivityModel sharedInstance] machines];
+    self.tasks.array = [[ActivityModel sharedInstance] tasksForJob:self.jobs.arrayId];
+
     if ([ActivityModel sharedInstance].activity) {
         self.jobs.enabled = false;
         self.jobs.borderStyle = UITextBorderStyleNone;
-        self.jobs.array = [[ActivityModel sharedInstance] jobs];
         self.jobs.arrayId = (int)[[ActivityModel sharedInstance].activity.jobIdentifier integerValue];
+
+        self.places.enabled = false;
+        self.automaticPlace = false;
+        self.places.borderStyle = UITextBorderStyleNone;
+        self.places.arrayId = (int)[[ActivityModel sharedInstance].activity.placeIdentifier integerValue];
+        
+        self.machines.enabled = false;
+        self.automaticMachine = false;
+        self.machines.borderStyle = UITextBorderStyleNone;
+        self.machines.arrayId = (int)[[ActivityModel sharedInstance].activity.machineIdentifier integerValue];
         
         self.tasks.enabled = false;
         self.tasks.borderStyle = UITextBorderStyleNone;
-        self.tasks.array = [[ActivityModel sharedInstance] tasksForJob:self.jobs.arrayId];
         self.tasks.arrayId = (int)[[ActivityModel sharedInstance].activity.taskIdentifier integerValue];
         
         if ([ActivityModel sharedInstance].activity.lastStart) {
             self.play.enabled = false;
             self.pause.enabled = true;
+            self.stop.enabled = true;
         } else {
             self.play.enabled = true;
             self.pause.enabled = false;
+            self.stop.enabled = false;
         }
     } else {
         self.jobs.enabled = true;
         self.jobs.borderStyle = UITextBorderStyleRoundedRect;
         
+        self.places.enabled = true;
+        if (self.places.arrayId == 0) {
+            self.automaticPlace = true;
+        }
+        self.places.borderStyle = UITextBorderStyleRoundedRect;
+        
+        self.machines.enabled = true;
+        if (self.machines.arrayId == 0) {
+            self.automaticMachine = true;
+        }
+        self.machines.borderStyle = UITextBorderStyleRoundedRect;
+        
         self.play.enabled = false;
         self.pause.enabled = false;
+        self.stop.enabled = false;
         if (self.jobs.arrayId == 0) {
             self.tasks.enabled = false;
             self.tasks.borderStyle = UITextBorderStyleNone;
@@ -107,7 +190,7 @@
             self.tasks.enabled = true;
             self.tasks.borderStyle = UITextBorderStyleRoundedRect;
         }
-        if (self.tasks.arrayId == 0) {
+        if (self.tasks.arrayId == 0 || self.places.arrayId == 0 || self.machines.arrayId == 0) {
             self.play.enabled = false;
         } else {
             self.play.enabled = true;
@@ -132,6 +215,24 @@
     [self setStatus];
 }
 
+- (IBAction)placeStarting:(IdPicker *)sender {
+    self.places.array = [[ActivityModel sharedInstance] places];
+}
+
+- (IBAction)place:(IdPicker *)sender {
+    self.automaticPlace = (sender.arrayId == 0);
+    [self setStatus];
+}
+
+- (IBAction)machineStarting:(IdPicker *)sender {
+    self.machines.array = [[ActivityModel sharedInstance] machines];
+}
+
+- (IBAction)machine:(IdPicker *)sender {
+    self.automaticMachine = (sender.arrayId == 0);
+    [self setStatus];
+}
+
 - (IBAction)home:(UIBarButtonItem *)sender {
     NSMutableDictionary *config = [[NSMutableDictionary alloc] init];
     for (NSString *key in @[@"Publish",
@@ -142,7 +243,8 @@
                             @"UserName",
                             @"Password",
                             @"Subscription",
-                            @"KeepDays"]) {
+                            @"KeepDays",
+                            @"Beacons"]) {
         [config setObject:[[NSUserDefaults standardUserDefaults] objectForKey:key] forKey:key];
     }
     AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
@@ -183,9 +285,17 @@
     [self setStatus];
 }
 
+- (IBAction)stop:(UIBarButtonItem *)sender {
+    [[ActivityModel sharedInstance] stop];
+    [self setStatus];
+}
+
 - (IBAction)play:(UIBarButtonItem *)sender {
     if (![ActivityModel sharedInstance].activity) {
-        [[ActivityModel sharedInstance] createActivityWithJob:self.jobs.arrayId task:self.tasks.arrayId];
+        [[ActivityModel sharedInstance] createActivityWithJob:self.jobs.arrayId
+                                                         task:self.tasks.arrayId
+                                                        place:self.places.arrayId
+                                                      machine:self.machines.arrayId];
     }
     [[ActivityModel sharedInstance] start];
     [self setStatus];
@@ -212,7 +322,7 @@
     if (![self.fetchedResultsController performFetch:&error]) {
         // Replace this implementation with code to handle     the error appropriately.
         // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-        CLSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
         abort();
     }
 
@@ -305,7 +415,7 @@
 
         NSError *error = nil;
         if (![context save:&error]) {
-            CLSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
             abort();
         }
     }
@@ -348,8 +458,11 @@
     
     if (log.status) {
         switch ([log.status intValue]) {
-            case 2:
+            case 3:
                 cell.imageView.image = [UIImage imageNamed:@"Stop"];
+                break;
+            case 2:
+                cell.imageView.image = [UIImage imageNamed:@"Pause"];
                 break;
             case 1:
                 cell.imageView.image = [UIImage imageNamed:@"Play"];

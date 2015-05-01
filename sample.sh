@@ -1,0 +1,30 @@
+BROKER='-h localhost'
+USER='-u suer'
+PWD='-P password'
+PORT='-p 1883'
+BASE='owntracks/user/demo/jobs'
+
+mosquitto_pub $BROKER $USER $PWD $PORT -r -t "$BASE/job/01" -m 'Job 01'
+mosquitto_pub $BROKER $USER $PWD $PORT -r -t "$BASE/job/02" -m 'Job 02'
+mosquitto_pub $BROKER $USER $PWD $PORT -r -t "$BASE/job/10" -m 'Job 10'
+mosquitto_pub $BROKER $USER $PWD $PORT -r -t "$BASE/job/99" -m 'Job 99'
+
+mosquitto_pub $BROKER $USER $PWD $PORT -r -t "$BASE/job/01/01" -m 'Task 0101'
+mosquitto_pub $BROKER $USER $PWD $PORT -r -t "$BASE/job/01/02" -m 'Task 0102'
+mosquitto_pub $BROKER $USER $PWD $PORT -r -t "$BASE/job/01/03" -m 'Task 0103'
+mosquitto_pub $BROKER $USER $PWD $PORT -r -t "$BASE/job/02/01" -m 'Task 0201'
+mosquitto_pub $BROKER $USER $PWD $PORT -r -t "$BASE/job/02/02" -m 'Task 0202'
+mosquitto_pub $BROKER $USER $PWD $PORT -r -t "$BASE/job/02/03" -m 'Task 0203'
+mosquitto_pub $BROKER $USER $PWD $PORT -r -t "$BASE/job/10/01" -m 'Task 1001'
+mosquitto_pub $BROKER $USER $PWD $PORT -r -t "$BASE/job/10/02" -m 'Task 1002'
+mosquitto_pub $BROKER $USER $PWD $PORT -r -t "$BASE/job/10/03" -m 'Task 1003'
+mosquitto_pub $BROKER $USER $PWD $PORT -r -t "$BASE/job/99/97" -m 'Task 9997'
+mosquitto_pub $BROKER $USER $PWD $PORT -r -t "$BASE/job/99/98" -m 'Task 9998'
+mosquitto_pub $BROKER $USER $PWD $PORT -r -t "$BASE/job/99/99" -m 'Task 9999'
+
+mosquitto_pub $BROKER $USER $PWD $PORT -r -t "$BASE/place/01" -m 'a 51.0000 6.0000 100'
+mosquitto_pub $BROKER $USER $PWD $PORT -r -t "$BASE/place/02" -m 'b 52.0000 8.0000 100'
+
+mosquitto_pub $BROKER $USER $PWD $PORT -r -t "$BASE/machine/00" -n
+mosquitto_pub $BROKER $USER $PWD $PORT -r -t "$BASE/machine/01" -m 'x CA000000-5F00-4E00-8F00-2A0000000000 1 1'
+mosquitto_pub $BROKER $USER $PWD $PORT -r -t "$BASE/machine/02" -m 'y CA000000-5F00-4E00-8F00-2A0000000000 1 2'

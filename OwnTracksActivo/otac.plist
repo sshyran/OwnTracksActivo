@@ -20,5 +20,9 @@
 	<string>owntracks/user/demo/jobs/currentjob</string>
 	<key>KeepDays</key>
 	<integer>7</integer>
+	<key>Beacons</key>
+	<array>
+		<string></string>
+	</array>
 </dict>
 </plist>

@@ -8,12 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
+#import "LocationManager.h"
 
 @interface ViewController : UIViewController
                     <UITableViewDataSource,
                     UITableViewDelegate,
                     NSFetchedResultsControllerDelegate,
-                    UIAlertViewDelegate>
+                    UIAlertViewDelegate,
+                    LocationManagerDelegate>
 
 
 @end

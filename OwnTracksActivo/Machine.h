@@ -1,5 +1,5 @@
 //
-//  Task.h
+//  Machine.h
 //  OwnTracksActivo
 //
 //  Created by Christoph Krey on 30.04.15.
@@ -10,10 +10,12 @@
 #import <CoreData/CoreData.h>
 
 
-@interface Task : NSManagedObject
+@interface Machine : NSManagedObject
 
 @property (nonatomic, retain) NSNumber * identifier;
-@property (nonatomic, retain) NSNumber * jobIdentifier;
 @property (nonatomic, retain) NSString * name;
+@property (nonatomic, retain) NSString * uuid;
+@property (nonatomic, retain) NSNumber * major;
+@property (nonatomic, retain) NSNumber * minor;
 
 @end
