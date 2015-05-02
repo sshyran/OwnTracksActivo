@@ -1,6 +1,13 @@
 OwnTracksActivo iOS 0.1 Release Notes
 =====================================
 
+## OwnTracksActivo 0.1.1
+>Release date: 2015-05-01 for alpha testers only
+
+[NEW] Default Job, Task, Place and Machine
+[NEW] Pause starts new Activity if defined
+[NEW] UI updates
+
 ## OwnTracksActivo 0.1.0
 >Release date: 2015-05-01 for alpha testers only
 
