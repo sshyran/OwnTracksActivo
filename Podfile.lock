@@ -1,10 +1,10 @@
 PODS:
-  - MQTTClient (0.1.4)
+  - MQTTClient (0.1.5)
 
 DEPENDENCIES:
   - MQTTClient
 
 SPEC CHECKSUMS:
-  MQTTClient: b3f7ebe358e9ef96fb47f264bad743c9e4b9337e
+  MQTTClient: a5a626552d068a315fdefb07befa9794175a622e
 
 COCOAPODS: 0.35.0

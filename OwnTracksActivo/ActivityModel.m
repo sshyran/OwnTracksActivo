@@ -25,30 +25,41 @@ static ActivityModel *theActivityModel;
     return theActivityModel;
 }
 
++ (NSUInteger)noId {
+    return 0;
+}
+
++ (NSUInteger)pauseId {
+    return 10001;
+}
+
++ (NSUInteger)defaultId {
+    return 10002;
+}
+
 - (ActivityModel *)init {
     self = [super init];
     AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Activity"];
-
+    
     NSError *error = nil;
-
+    
     NSArray *matches = [appDelegate.managedObjectContext executeFetchRequest:request
                                                                        error:&error];
-
+    
     if (matches && matches.count > 0) {
         self.activity = (Activity *)matches[0];
     }
     
     [self log:0 content:@"Activo starting"];
-
+    
     return self;
 }
 
-- (BOOL)createActivityWithJob:(NSUInteger)jobIdentifier
-                         task:(NSUInteger)taskIdentifier
-                        place:(NSUInteger)placeIdentifier
-                      machine:(NSUInteger)machineIdentifier {
-
+- (BOOL)startJob:(NSUInteger)jobIdentifier
+            task:(NSUInteger)taskIdentifier
+           place:(NSUInteger)placeIdentifier
+         machine:(NSUInteger)machineIdentifier {
     if (!self.activity) {
         AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
         self.activity = [NSEntityDescription insertNewObjectForEntityForName:@"Activity"
@@ -59,50 +70,54 @@ static ActivityModel *theActivityModel;
         self.activity.machineIdentifier = [NSNumber numberWithUnsignedInteger:machineIdentifier];
         self.activity.lastStart = nil;
         self.activity.duration = [NSNumber numberWithDouble:0.0];
-        return true;
     } else {
-        return false;
+        AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+        [appDelegate.mqttSession publishData:nil
+                                     onTopic:[[NSUserDefaults standardUserDefaults] stringForKey:@"Publish"]
+                                      retain:true
+                                         qos:MQTTQosLevelExactlyOnce];
+        [appDelegate.mqttSession publishData:[[NSString stringWithFormat:@"%@ %@ %@ %@",
+                                               [NSNumber numberWithUnsignedInteger:[ActivityModel noId]],
+                                               [NSNumber numberWithUnsignedInteger:[ActivityModel noId]],
+                                               [NSNumber numberWithUnsignedInteger:[ActivityModel noId]],
+                                               [NSNumber numberWithUnsignedInteger:[ActivityModel noId]]
+                                               ] dataUsingEncoding:NSUTF8StringEncoding]
+                                     onTopic:[NSString stringWithFormat:@"%@/%.0f",
+                                              [[NSUserDefaults standardUserDefaults] stringForKey:@"Publish"],
+                                              [[NSDate date] timeIntervalSince1970]]
+                                      retain:true
+                                         qos:MQTTQosLevelAtLeastOnce];
+        
     }
-}
-
-- (BOOL)start {
-    if (self.activity) {
-        if (self.activity.lastStart == nil) {
-            self.activity.lastStart = [NSDate date];
-            [self log:1
-              content:[NSString stringWithFormat:@"%@/%@/%@/%@",
-                       [self getJob:[self.activity.jobIdentifier integerValue]].name,
-                       [self getTask:[self.activity.taskIdentifier integerValue]
-                               inJob:[self.activity.jobIdentifier integerValue]].name,
-                       [self getPlace:[self.activity.placeIdentifier integerValue]].name,
-                       [self getMachine:[self.activity.machineIdentifier integerValue]].name]];
-            AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-            [appDelegate.mqttSession publishData:[[NSString stringWithFormat:@"%@ %@ %@ %@",
-                                                   self.activity.jobIdentifier,
-                                                   self.activity.taskIdentifier,
-                                                   self.activity.placeIdentifier,
-                                                   self.activity.machineIdentifier] dataUsingEncoding:NSUTF8StringEncoding]
-                                         onTopic:[[NSUserDefaults standardUserDefaults] stringForKey:@"Publish"]
-                                                  retain:true
-                                                  qos:MQTTQosLevelExactlyOnce];
-            [appDelegate.mqttSession publishData:[[NSString stringWithFormat:@"%@ %@ %@ %@",
-                                                   self.activity.jobIdentifier,
-                                                   self.activity.taskIdentifier,
-                                                   self.activity.placeIdentifier,
-                                                   self.activity.machineIdentifier] dataUsingEncoding:NSUTF8StringEncoding]
-                                         onTopic:[NSString stringWithFormat:@"%@/%.0f",
-                                                  [[NSUserDefaults standardUserDefaults] stringForKey:@"Publish"],
-                                                  [[NSDate date] timeIntervalSince1970]]
-                                          retain:true
-                                             qos:MQTTQosLevelAtLeastOnce];
-
-            return true;
-        } else  {
-            return false;
-        }
-    } else {
-        return false;
-    }
+    self.activity.lastStart = [NSDate date];
+    [self log:1
+      content:[NSString stringWithFormat:@"%@/%@/%@/%@",
+               [self getJob:[self.activity.jobIdentifier integerValue]].name,
+               [self getTask:[self.activity.taskIdentifier integerValue]
+                       inJob:[self.activity.jobIdentifier integerValue]].name,
+               [self getPlace:[self.activity.placeIdentifier integerValue]].name,
+               [self getMachine:[self.activity.machineIdentifier integerValue]].name]];
+    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    [appDelegate.mqttSession publishData:[[NSString stringWithFormat:@"%@ %@ %@ %@",
+                                           self.activity.jobIdentifier,
+                                           self.activity.taskIdentifier,
+                                           self.activity.placeIdentifier,
+                                           self.activity.machineIdentifier] dataUsingEncoding:NSUTF8StringEncoding]
+                                 onTopic:[[NSUserDefaults standardUserDefaults] stringForKey:@"Publish"]
+                                  retain:true
+                                     qos:MQTTQosLevelExactlyOnce];
+    [appDelegate.mqttSession publishData:[[NSString stringWithFormat:@"%@ %@ %@ %@",
+                                           self.activity.jobIdentifier,
+                                           self.activity.taskIdentifier,
+                                           self.activity.placeIdentifier,
+                                           self.activity.machineIdentifier] dataUsingEncoding:NSUTF8StringEncoding]
+                                 onTopic:[NSString stringWithFormat:@"%@/%.0f",
+                                          [[NSUserDefaults standardUserDefaults] stringForKey:@"Publish"],
+                                          [[NSDate date] timeIntervalSince1970]]
+                                  retain:true
+                                     qos:MQTTQosLevelAtLeastOnce];
+    
+    return true;
 }
 
 - (BOOL)pause {
@@ -117,12 +132,41 @@ static ActivityModel *theActivityModel;
                                          onTopic:[[NSUserDefaults standardUserDefaults] stringForKey:@"Publish"]
                                           retain:true
                                              qos:MQTTQosLevelExactlyOnce];
-            [appDelegate.mqttSession publishData:[@"0 0 0 0" dataUsingEncoding:NSUTF8StringEncoding]
+            [appDelegate.mqttSession publishData:[[NSString stringWithFormat:@"%@ %@ %@ %@",
+                                                   [NSNumber numberWithUnsignedInteger:[ActivityModel noId]],
+                                                   [NSNumber numberWithUnsignedInteger:[ActivityModel noId]],
+                                                   [NSNumber numberWithUnsignedInteger:[ActivityModel noId]],
+                                                   [NSNumber numberWithUnsignedInteger:[ActivityModel noId]]
+                                                   ] dataUsingEncoding:NSUTF8StringEncoding]
                                          onTopic:[NSString stringWithFormat:@"%@/%.0f",
                                                   [[NSUserDefaults standardUserDefaults] stringForKey:@"Publish"],
                                                   [[NSDate date] timeIntervalSince1970]]
                                           retain:true
                                              qos:MQTTQosLevelAtLeastOnce];
+            
+            if ([[ActivityModel sharedInstance] getJob:[ActivityModel pauseId]]) {
+                [appDelegate.mqttSession publishData:[[NSString stringWithFormat:@"%@ %@ %@ %@",
+                                                       [NSNumber numberWithUnsignedInteger:[ActivityModel pauseId]],
+                                                       [NSNumber numberWithUnsignedInteger:[ActivityModel pauseId]],
+                                                       [NSNumber numberWithUnsignedInteger:[ActivityModel pauseId]],
+                                                       [NSNumber numberWithUnsignedInteger:[ActivityModel pauseId]]
+                                                       ] dataUsingEncoding:NSUTF8StringEncoding]
+                                             onTopic:[[NSUserDefaults standardUserDefaults] stringForKey:@"Publish"]
+                                              retain:true
+                                                 qos:MQTTQosLevelExactlyOnce];
+                [appDelegate.mqttSession publishData:[[NSString stringWithFormat:@"%@ %@ %@ %@",
+                                                       [NSNumber numberWithUnsignedInteger:[ActivityModel pauseId]],
+                                                       [NSNumber numberWithUnsignedInteger:[ActivityModel pauseId]],
+                                                       [NSNumber numberWithUnsignedInteger:[ActivityModel pauseId]],
+                                                       [NSNumber numberWithUnsignedInteger:[ActivityModel pauseId]]
+                                                       ] dataUsingEncoding:NSUTF8StringEncoding]
+                                             onTopic:[NSString stringWithFormat:@"%@/%.0f",
+                                                      [[NSUserDefaults standardUserDefaults] stringForKey:@"Publish"],
+                                                      [[NSDate date] timeIntervalSince1970]]
+                                              retain:true
+                                                 qos:MQTTQosLevelAtLeastOnce];
+                
+            }
             [self log:2
               content:[NSString stringWithFormat:@"%@", [self durationString]]
              ];
@@ -144,16 +188,23 @@ static ActivityModel *theActivityModel;
             self.activity.duration = [NSNumber numberWithDouble:duration];
             self.activity.lastStart = nil;
             AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+            
             [appDelegate.mqttSession publishData:nil
                                          onTopic:[[NSUserDefaults standardUserDefaults] stringForKey:@"Publish"]
                                           retain:true
                                              qos:MQTTQosLevelExactlyOnce];
-            [appDelegate.mqttSession publishData:[@"0 0 0 0" dataUsingEncoding:NSUTF8StringEncoding]
+            [appDelegate.mqttSession publishData:[[NSString stringWithFormat:@"%@ %@ %@ %@",
+                                                   [NSNumber numberWithUnsignedInteger:[ActivityModel noId]],
+                                                   [NSNumber numberWithUnsignedInteger:[ActivityModel noId]],
+                                                   [NSNumber numberWithUnsignedInteger:[ActivityModel noId]],
+                                                   [NSNumber numberWithUnsignedInteger:[ActivityModel noId]]
+                                                   ] dataUsingEncoding:NSUTF8StringEncoding]
                                          onTopic:[NSString stringWithFormat:@"%@/%.0f",
                                                   [[NSUserDefaults standardUserDefaults] stringForKey:@"Publish"],
                                                   [[NSDate date] timeIntervalSince1970]]
                                           retain:true
                                              qos:MQTTQosLevelAtLeastOnce];
+            
             [self log:3
               content:[NSString stringWithFormat:@"%@", [self durationString]]
              ];
@@ -263,14 +314,14 @@ static ActivityModel *theActivityModel;
     Place *place = [self getPlace:placeIdentifier];
     if (!place) {
         place = [NSEntityDescription insertNewObjectForEntityForName:@"Place"
-                                            inManagedObjectContext:appDelegate.managedObjectContext];
+                                              inManagedObjectContext:appDelegate.managedObjectContext];
         place.identifier = [NSNumber numberWithUnsignedInteger:placeIdentifier];
     }
     place.name = name;
     place.latitude = [NSNumber numberWithDouble:latitude];
     place.longitude = [NSNumber numberWithDouble:longitude];
     place.radius = [NSNumber numberWithDouble:radius];
-
+    
     [appDelegate saveContext];
     return true;
 }
@@ -284,15 +335,15 @@ static ActivityModel *theActivityModel;
     Machine *machine = [self getMachine:machineIdentifier];
     if (!machine) {
         machine = [NSEntityDescription insertNewObjectForEntityForName:@"Machine"
-                                            inManagedObjectContext:appDelegate.managedObjectContext];
+                                                inManagedObjectContext:appDelegate.managedObjectContext];
         machine.identifier = [NSNumber numberWithUnsignedInteger:machineIdentifier];
     }
     machine.name = name;
     machine.uuid = uuid;
     machine.major = [NSNumber numberWithUnsignedInteger:major];
     machine.minor = [NSNumber numberWithUnsignedInteger:minor];
-
-
+    
+    
     [appDelegate saveContext];
     return true;
 }
@@ -304,7 +355,7 @@ static ActivityModel *theActivityModel;
         task.name = name;
     } else {
         task = [NSEntityDescription insertNewObjectForEntityForName:@"Task"
-                                                inManagedObjectContext:appDelegate.managedObjectContext];
+                                             inManagedObjectContext:appDelegate.managedObjectContext];
         task.identifier = [NSNumber numberWithUnsignedInteger:taskIdentifier];
         task.jobIdentifier = [NSNumber numberWithUnsignedInteger:jobIdentifier];
         task.name = name;

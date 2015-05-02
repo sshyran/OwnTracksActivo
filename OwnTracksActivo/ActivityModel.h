@@ -17,12 +17,14 @@
 
 @property (readonly, strong, nonatomic) Activity *activity;
 + (ActivityModel *)sharedInstance;
++ (NSUInteger)defaultId;
++ (NSUInteger)pauseId;
++ (NSUInteger)noId;
 
-- (BOOL)createActivityWithJob:(NSUInteger)jobIdentifier
-                         task:(NSUInteger)taskIdentifier
-                        place:(NSUInteger)placeIdentifier
-                      machine:(NSUInteger)machineIdentifier;
-- (BOOL)start;
+- (BOOL)startJob:(NSUInteger)jobIdentifier
+            task:(NSUInteger)taskIdentifier
+           place:(NSUInteger)placeIdentifier
+         machine:(NSUInteger)machineIdentifier;
 - (BOOL)pause;
 - (BOOL)stop;
 - (NSTimeInterval)actualDuration;

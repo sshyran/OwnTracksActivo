@@ -69,6 +69,7 @@
                 ([machine.major intValue] == 0 || [machine.major intValue] == [beacon.major intValue]) &&
                 ([machine.minor intValue] == 0 || [machine.minor intValue] == [beacon.minor intValue])) {
                 self.machines.arrayId = [machine.identifier intValue];
+                [self setStatus];
                 break;
             }
         }
@@ -86,6 +87,7 @@
                                                 identifier:place.name];
             if ([circularRegion containsCoordinate:[LocationManager sharedInstance].location.coordinate]) {
                 self.places.arrayId = [place.identifier intValue];
+                [self setStatus];
                 break;
             }
         }
@@ -131,6 +133,11 @@
 }
 
 - (void)setStatus {
+#define noColor [UIColor colorWithRed:0.75 green:0.75 blue:0.75 alpha:1.0]
+#define defaultColor [UIColor colorWithRed:0.75 green:0.75 blue:1.0 alpha:1.0]
+#define valueColor [UIColor colorWithRed:0.75 green:1.0 blue:0.75 alpha:1.0]
+#define runColor [UIColor colorWithRed:71.0/255.0 green:141.0/255.0 blue:178.0/255.0 alpha:1.0]
+    
     self.jobs.array = [[ActivityModel sharedInstance] jobs];
     self.places.array = [[ActivityModel sharedInstance] places];
     self.machines.array = [[ActivityModel sharedInstance] machines];
@@ -139,20 +146,24 @@
     if ([ActivityModel sharedInstance].activity) {
         self.jobs.enabled = false;
         self.jobs.borderStyle = UITextBorderStyleNone;
+        self.jobs.backgroundColor = runColor;
         self.jobs.arrayId = (int)[[ActivityModel sharedInstance].activity.jobIdentifier integerValue];
 
         self.places.enabled = false;
         self.automaticPlace = false;
         self.places.borderStyle = UITextBorderStyleNone;
+        self.places.backgroundColor = runColor;
         self.places.arrayId = (int)[[ActivityModel sharedInstance].activity.placeIdentifier integerValue];
         
         self.machines.enabled = false;
         self.automaticMachine = false;
         self.machines.borderStyle = UITextBorderStyleNone;
+        self.machines.backgroundColor = runColor;
         self.machines.arrayId = (int)[[ActivityModel sharedInstance].activity.machineIdentifier integerValue];
         
         self.tasks.enabled = false;
         self.tasks.borderStyle = UITextBorderStyleNone;
+        self.tasks.backgroundColor = runColor;
         self.tasks.arrayId = (int)[[ActivityModel sharedInstance].activity.taskIdentifier integerValue];
         
         if ([ActivityModel sharedInstance].activity.lastStart) {
@@ -169,13 +180,13 @@
         self.jobs.borderStyle = UITextBorderStyleRoundedRect;
         
         self.places.enabled = true;
-        if (self.places.arrayId == 0) {
+        if (self.places.arrayId == [ActivityModel noId]) {
             self.automaticPlace = true;
         }
         self.places.borderStyle = UITextBorderStyleRoundedRect;
         
         self.machines.enabled = true;
-        if (self.machines.arrayId == 0) {
+        if (self.machines.arrayId == [ActivityModel noId]) {
             self.automaticMachine = true;
         }
         self.machines.borderStyle = UITextBorderStyleRoundedRect;
@@ -183,19 +194,52 @@
         self.play.enabled = false;
         self.pause.enabled = false;
         self.stop.enabled = false;
-        if (self.jobs.arrayId == 0) {
+        if (self.jobs.arrayId == [ActivityModel noId]) {
             self.tasks.enabled = false;
             self.tasks.borderStyle = UITextBorderStyleNone;
         } else {
             self.tasks.enabled = true;
             self.tasks.borderStyle = UITextBorderStyleRoundedRect;
         }
-        if (self.tasks.arrayId == 0 || self.places.arrayId == 0 || self.machines.arrayId == 0) {
+        if (self.tasks.arrayId == [ActivityModel noId] ||
+            self.places.arrayId == [ActivityModel noId] ||
+            self.machines.arrayId == [ActivityModel noId]) {
             self.play.enabled = false;
         } else {
             self.play.enabled = true;
         }
+        if (self.jobs.arrayId == [ActivityModel noId]) {
+            self.jobs.backgroundColor = noColor;
+        } else if (self.jobs.arrayId == [ActivityModel defaultId]) {
+            self.jobs.backgroundColor = defaultColor;
+        } else {
+            self.jobs.backgroundColor = valueColor;
+        }
+        if (self.places.arrayId == [ActivityModel noId]) {
+            self.places.backgroundColor = noColor;
+        } else if (self.places.arrayId == [ActivityModel defaultId]) {
+            self.places.backgroundColor = defaultColor;
+        } else {
+            self.places.backgroundColor = valueColor;
+        }
+        if (self.machines.arrayId == [ActivityModel noId]) {
+            self.machines.backgroundColor = noColor;
+        } else if (self.machines.arrayId == [ActivityModel defaultId]) {
+            self.machines.backgroundColor = defaultColor;
+        } else {
+            self.machines.backgroundColor = valueColor;
+        }
+        if (self.tasks.arrayId == [ActivityModel noId]) {
+            self.tasks.backgroundColor = noColor;
+        } else if (self.tasks.arrayId == [ActivityModel defaultId]) {
+            self.tasks.backgroundColor = defaultColor;
+        } else {
+            self.tasks.backgroundColor = valueColor;
+        }
     }
+    
+    self.automaticPlace = (self.places.arrayId == [ActivityModel noId] || self.places.arrayId == [ActivityModel defaultId]);
+    self.automaticMachine = (self.machines.arrayId == [ActivityModel noId] || self.machines.arrayId == [ActivityModel defaultId]);
 }
 
 - (IBAction)jobStarting:(IdPicker *)sender {
@@ -203,6 +247,7 @@
 }
 
 - (IBAction)job:(IdPicker *)sender {
+    self.tasks.array = [[ActivityModel sharedInstance] tasksForJob:sender.arrayId];
     self.tasks.arrayId = 0;
     [self setStatus];
 }
@@ -220,7 +265,6 @@
 }
 
 - (IBAction)place:(IdPicker *)sender {
-    self.automaticPlace = (sender.arrayId == 0);
     [self setStatus];
 }
 
@@ -229,7 +273,6 @@
 }
 
 - (IBAction)machine:(IdPicker *)sender {
-    self.automaticMachine = (sender.arrayId == 0);
     [self setStatus];
 }
 
@@ -271,13 +314,29 @@
             self.status.text = [NSString stringWithFormat:@"working for %@",
                                 [[ActivityModel sharedInstance] durationString]];
         } else {
-            self.status.text = [NSString stringWithFormat:@"stopped after %@",
-                                [[ActivityModel sharedInstance] durationString]
-                                ];
+            self.status.text = [NSString stringWithFormat:@"pause"];
         }
     } else {
         self.status.text = @"";
     }
+    if (self.jobs.arrayId == 0 &&
+        [[ActivityModel sharedInstance] getJob:[ActivityModel defaultId]] != nil) {
+        self.jobs.arrayId = (int)[ActivityModel defaultId];
+        self.tasks.array = [[ActivityModel sharedInstance] tasksForJob:self.jobs.arrayId];
+    }
+    if (self.tasks.arrayId == 0 &&
+        [[ActivityModel sharedInstance] getTask:[ActivityModel defaultId] inJob:self.jobs.arrayId] != nil) {
+        self.tasks.arrayId = (int)[ActivityModel defaultId];
+    }
+    if (self.places.arrayId == 0 &&
+    
+        [[ActivityModel sharedInstance] getPlace:[ActivityModel defaultId]] != nil) {
+        self.places.arrayId = (int)[ActivityModel defaultId];
+    }
+    if (self.machines.arrayId == 0 && [[ActivityModel sharedInstance] getMachine:[ActivityModel defaultId]] != nil) {
+        self.machines.arrayId = (int)[ActivityModel defaultId];
+    }
+    [self setStatus];
 }
 
 - (IBAction)pause:(UIBarButtonItem *)sender {
@@ -291,15 +350,11 @@
 }
 
 - (IBAction)play:(UIBarButtonItem *)sender {
-    if (![ActivityModel sharedInstance].activity) {
-        [[ActivityModel sharedInstance] createActivityWithJob:self.jobs.arrayId
-                                                         task:self.tasks.arrayId
-                                                        place:self.places.arrayId
-                                                      machine:self.machines.arrayId];
-    }
-    [[ActivityModel sharedInstance] start];
-    [self setStatus];
-}
+    [[ActivityModel sharedInstance] startJob:self.jobs.arrayId
+                                        task:self.tasks.arrayId
+                                       place:self.places.arrayId
+                                     machine:self.machines.arrayId];
+    [self setStatus];}
 
 #pragma mark - Fetched results controller
 
