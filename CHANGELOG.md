@@ -1,6 +1,11 @@
 OwnTracksActivo iOS 0.1 Release Notes
 =====================================
 
+## OwnTracksActivo 0.1.2
+>Release date: 2015-05-04 for alpha testers only
+
+[NEW] Publish to .../currentjob/<timestamp> now publish unretained (compatible with o2s)
+
 ## OwnTracksActivo 0.1.1
 >Release date: 2015-05-01 for alpha testers only
 

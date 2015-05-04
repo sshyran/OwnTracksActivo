@@ -114,7 +114,7 @@ static ActivityModel *theActivityModel;
                                  onTopic:[NSString stringWithFormat:@"%@/%.0f",
                                           [[NSUserDefaults standardUserDefaults] stringForKey:@"Publish"],
                                           [[NSDate date] timeIntervalSince1970]]
-                                  retain:true
+                                  retain:false
                                      qos:MQTTQosLevelAtLeastOnce];
     
     return true;
@@ -141,7 +141,7 @@ static ActivityModel *theActivityModel;
                                          onTopic:[NSString stringWithFormat:@"%@/%.0f",
                                                   [[NSUserDefaults standardUserDefaults] stringForKey:@"Publish"],
                                                   [[NSDate date] timeIntervalSince1970]]
-                                          retain:true
+                                          retain:false
                                              qos:MQTTQosLevelAtLeastOnce];
             
             if ([[ActivityModel sharedInstance] getJob:[ActivityModel pauseId]]) {
@@ -163,7 +163,7 @@ static ActivityModel *theActivityModel;
                                              onTopic:[NSString stringWithFormat:@"%@/%.0f",
                                                       [[NSUserDefaults standardUserDefaults] stringForKey:@"Publish"],
                                                       [[NSDate date] timeIntervalSince1970]]
-                                              retain:true
+                                              retain:false
                                                  qos:MQTTQosLevelAtLeastOnce];
                 
             }
@@ -202,7 +202,7 @@ static ActivityModel *theActivityModel;
                                          onTopic:[NSString stringWithFormat:@"%@/%.0f",
                                                   [[NSUserDefaults standardUserDefaults] stringForKey:@"Publish"],
                                                   [[NSDate date] timeIntervalSince1970]]
-                                          retain:true
+                                          retain:false
                                              qos:MQTTQosLevelAtLeastOnce];
             
             [self log:3
