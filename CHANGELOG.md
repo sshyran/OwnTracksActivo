@@ -1,5 +1,11 @@
-OwnTracksActivo iOS 0.1 Release Notes
-=====================================
+OwnTracksActivo iOS Release Notes
+=================================
+
+## OwnTracksActivo 0.2.0
+>Release date: 2015-08-31 for alpha testers only
+
+[NEW] Variable caption via .otac
+[NEW] Variable background color via .otac
 
 ## OwnTracksActivo 0.1.2
 >Release date: 2015-05-04 for alpha testers only

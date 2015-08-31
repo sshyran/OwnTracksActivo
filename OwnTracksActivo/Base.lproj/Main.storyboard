@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="hkL-hO-bAu">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="hkL-hO-bAu">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -30,7 +30,7 @@
                                     <action selector="jobStarting:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="Fml-tW-DSI"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="select task" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="i6r-Nj-N1g" customClass="IdPicker">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="select task" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="i6r-Nj-N1g" customClass="IdPicker">
                                 <rect key="frame" x="16" y="122" width="568" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -43,7 +43,7 @@
                                     <action selector="taskStarting:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="wlL-rU-f0f"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="select place" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="01K-HM-a4U" customClass="IdPicker">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="select place" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="01K-HM-a4U" customClass="IdPicker">
                                 <rect key="frame" x="16" y="160" width="568" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -56,7 +56,7 @@
                                     <action selector="placeStarting:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="e6e-Gp-WLC"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="select machine" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bYY-nK-3jt" customClass="IdPicker">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="select machine" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="bYY-nK-3jt" customClass="IdPicker">
                                 <rect key="frame" x="16" y="198" width="568" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>

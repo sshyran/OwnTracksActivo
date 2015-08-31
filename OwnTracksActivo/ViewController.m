@@ -98,6 +98,13 @@
     self.timer = [NSTimer timerWithTimeInterval:1.0 target:self selector:@selector(tick:) userInfo:nil repeats:true];
     [[NSRunLoop currentRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
     
+    self.title = [[NSUserDefaults standardUserDefaults] stringForKey:@"Caption"];
+    NSDictionary *background = [[NSUserDefaults standardUserDefaults] dictionaryForKey:@"Background"];
+    self.view.backgroundColor = [UIColor colorWithRed:[[background objectForKey:@"Red"] intValue] / 255.0
+                                                green:[[background objectForKey:@"Green"] intValue] / 255.0
+                                                 blue:[[background objectForKey:@"Blue"] intValue] / 255.0
+                                                alpha:[[background objectForKey:@"Alpha"] intValue] / 255.0];
+    
     AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
     [appDelegate.mqttSession addObserver:self forKeyPath:@"status"
                                  options:NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew

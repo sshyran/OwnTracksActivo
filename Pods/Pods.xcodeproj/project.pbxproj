@@ -1,1932 +1,595 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>archiveVersion</key>
-	<string>1</string>
-	<key>classes</key>
-	<dict/>
-	<key>objectVersion</key>
-	<string>46</string>
-	<key>objects</key>
-	<dict>
-		<key>005896A57A6D81CF0A270865</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>785A4D645612501DBB0498FB</string>
-			<key>buildPhases</key>
-			<array>
-				<string>031711E18385F87EB69475D2</string>
-				<string>46588A186C2ED465AF658212</string>
-				<string>F82AFF90F76DCEF64E6BF0E3</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>Pods-OwnTracksActivo-MQTTClient</string>
-			<key>productName</key>
-			<string>Pods-OwnTracksActivo-MQTTClient</string>
-			<key>productReference</key>
-			<string>A071661C72CD5BA0DBBA79FA</string>
-			<key>productType</key>
-			<string>com.apple.product-type.library.static</string>
-		</dict>
-		<key>031711E18385F87EB69475D2</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>1FF51AFA8E727C6E08D63574</string>
-				<string>77169DEE77E8AAB6E58958D3</string>
-				<string>D331F44D8BF3984BD85580AA</string>
-				<string>D011E4FECC1F72EF26FB9377</string>
-				<string>E09BE09EFE3391137F276392</string>
-				<string>F21ADCA781C8D80F43F72349</string>
-				<string>7FB63F3ADB1ED7E77D4B3B67</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>053078958E9EDBA22BCC9728</key>
-		<dict>
-			<key>fileRef</key>
-			<string>D7BB21E1FC522BF2FE307D96</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>06CBCF56B69A2ACAC7BAF9CA</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>Pods-OwnTracksActivo-dummy.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>06EB9509009526B406E547D3</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>A6ABADD152FABA62C258936E</string>
-				<string>A662F768491F1BB40DE3A69D</string>
-				<string>4C50FB473DE8A6F47660CBD8</string>
-				<string>AFB610C250801113AE7355C9</string>
-				<string>A86419B4E9695B572D075590</string>
-				<string>0F7C67EDD0FB03CB571264E4</string>
-				<string>E2E5DC207C354E56683D7A07</string>
-			</array>
-			<key>isa</key>
-			<string>PBXHeadersBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>079D303E046F23403DAA7A0F</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>60B5723E98E92442340712D3</string>
-				<string>FE9E459F7717224C542C5841</string>
-				<string>19CD82030459F48B7DC55A66</string>
-				<string>A071661C72CD5BA0DBBA79FA</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Products</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>0A5BC4B8E481D3824BB5971F</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>DE61574B6A90EFF7DDDBF099</string>
-				<string>5EC7FBF713F226603FF47FFA</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>0F7C67EDD0FB03CB571264E4</key>
-		<dict>
-			<key>fileRef</key>
-			<string>C5A1A47013B6ABC386C5A75B</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>13882721D3D351B0EA7807A6</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>MQTTEncoder.h</string>
-			<key>path</key>
-			<string>MQTTClient/MQTTClient/MQTTEncoder.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>15D954478F0999C15D98CD09</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CD79AE1170E1BFFFB30B1E00</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>19CD82030459F48B7DC55A66</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>archive.ar</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>libPods-OwnTracksActivo.a</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>1ACAF449ABB249F79C8F7D59</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>name</key>
-			<string>Pods-OwnTracksActivo-MQTTClient</string>
-			<key>target</key>
-			<string>005896A57A6D81CF0A270865</string>
-			<key>targetProxy</key>
-			<string>4D01D3811A2E824390EE50A6</string>
-		</dict>
-		<key>1BEE9C672451A40911489375</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>A9A1D395AD05BCB5939AF430</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>1FF51AFA8E727C6E08D63574</key>
-		<dict>
-			<key>fileRef</key>
-			<string>88C0254F5C4FC3A28315840B</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>232BB07ACF85C843AE1447D6</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>E1C3B545DA45D5DD00D34FDA</string>
-			<key>buildPhases</key>
-			<array>
-				<string>1BEE9C672451A40911489375</string>
-				<string>C791B5D368D9035FFA7BA840</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array>
-				<string>1ACAF449ABB249F79C8F7D59</string>
-			</array>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>Pods-OwnTracksActivo</string>
-			<key>productName</key>
-			<string>Pods-OwnTracksActivo</string>
-			<key>productReference</key>
-			<string>19CD82030459F48B7DC55A66</string>
-			<key>productType</key>
-			<string>com.apple.product-type.library.static</string>
-		</dict>
-		<key>23440DF5E7E8E17D13C508A2</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>Pods-MQTTClient-prefix.pch</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>26B6C7B7319E4084C3C63D53</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.script.sh</string>
-			<key>path</key>
-			<string>Pods-OwnTracksActivo-resources.sh</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>2A68C24521C2B69EE6F17ED5</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Pods-acknowledgements.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>2C90D6CFA80172DDB3D78751</key>
-		<dict>
-			<key>fileRef</key>
-			<string>8939C120573548F35B7A7C34</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>3399312CC238466764733B13</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A81EF10C536256B2DDB35DF6</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>3461D0501C54074F58462AC7</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>MQTTSession.m</string>
-			<key>path</key>
-			<string>MQTTClient/MQTTClient/MQTTSession.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>38EF59CF50D02A370F39266E</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text</string>
-			<key>path</key>
-			<string>Pods-OwnTracksActivo-acknowledgements.markdown</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>39CB453478838E32FB9D2193</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>D5FDDA36C64A8BC70CE6E12A</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>3A44F1BF921ED034986779FF</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>56B0A912D68ED1F1F5B68AC7</string>
-				<string>ED61B1EEB3B6CA78A94B6738</string>
-				<string>4634F8161F6B12FBF1E3F29F</string>
-				<string>23440DF5E7E8E17D13C508A2</string>
-				<string>65A00D27BFC6711BD583E44D</string>
-				<string>DF5512D65453FFBC19FD1DC1</string>
-				<string>95807168F6D7E7543756E551</string>
-				<string>F688980D967F0EF1F4A413D0</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Support Files</string>
-			<key>path</key>
-			<string>../Target Support Files/Pods-MQTTClient</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>3DAA7A3B5947F947BC836794</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>MQTTPersistence.m</string>
-			<key>path</key>
-			<string>MQTTClient/MQTTClient/MQTTPersistence.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>3F0283706312BB53357FC6CB</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>MQTTMessage.m</string>
-			<key>path</key>
-			<string>MQTTClient/MQTTClient/MQTTMessage.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>44594EA9239000E72C798476</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>765BF587601CA0AC2C6F37CB</string>
-				<string>EAFE4BA35C29A4AF0FBF0533</string>
-				<string>A41AC7A0F46CDFB8F3D1D950</string>
-				<string>F5681EDCA361908312343AC8</string>
-				<string>CDEFC06E7026D2AEF77E61C8</string>
-				<string>DE3C38774724283C042CEEA9</string>
-				<string>FF623642015AEC725649302D</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>4634F8161F6B12FBF1E3F29F</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>Pods-MQTTClient-dummy.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>46588A186C2ED465AF658212</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>8164B2C014A417C50F6DC7CF</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>4C2DD422C5F76ED33884205B</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>AFA7C00831445AF89DBA3839</string>
-				<string>D93EFEB7239B6997C5109058</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Targets Support Files</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>4C50FB473DE8A6F47660CBD8</key>
-		<dict>
-			<key>fileRef</key>
-			<string>13882721D3D351B0EA7807A6</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>4D01D3811A2E824390EE50A6</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>DB7C1E1C74854FC34FD54E2D</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>005896A57A6D81CF0A270865</string>
-			<key>remoteInfo</key>
-			<string>Pods-OwnTracksActivo-MQTTClient</string>
-		</dict>
-		<key>51154384C9CD022A46971E81</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.script.sh</string>
-			<key>path</key>
-			<string>Pods-resources.sh</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>514683632A2F047F227289CD</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>DF5512D65453FFBC19FD1DC1</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>NO</string>
-				<key>DSTROOT</key>
-				<string>/tmp/xcodeproj.dst</string>
-				<key>GCC_DYNAMIC_NO_PIC</key>
-				<string>NO</string>
-				<key>GCC_OPTIMIZATION_LEVEL</key>
-				<string>0</string>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>Target Support Files/Pods-OwnTracksActivo-MQTTClient/Pods-OwnTracksActivo-MQTTClient-prefix.pch</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>DEBUG=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
-				<string>NO</string>
-				<key>INSTALL_PATH</key>
-				<string>$(BUILT_PRODUCTS_DIR)</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>8.1</string>
-				<key>OTHER_LDFLAGS</key>
-				<string></string>
-				<key>OTHER_LIBTOOLFLAGS</key>
-				<string></string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>5419220B35F39350ADB248F4</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>763079BE947D2C983DFE9276</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Pods</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5661138E1A39730E4EF50F84</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>9933F8EF4847AB04091C961D</string>
-				<string>88EFD77375317B87B9427063</string>
-				<string>5419220B35F39350ADB248F4</string>
-				<string>079D303E046F23403DAA7A0F</string>
-				<string>4C2DD422C5F76ED33884205B</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>56B0A912D68ED1F1F5B68AC7</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>path</key>
-			<string>Pods-MQTTClient.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>56D11496621986F7140A69E2</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>ED61B1EEB3B6CA78A94B6738</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>NO</string>
-				<key>DSTROOT</key>
-				<string>/tmp/xcodeproj.dst</string>
-				<key>GCC_DYNAMIC_NO_PIC</key>
-				<string>NO</string>
-				<key>GCC_OPTIMIZATION_LEVEL</key>
-				<string>0</string>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>Target Support Files/Pods-MQTTClient/Pods-MQTTClient-prefix.pch</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>DEBUG=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
-				<string>NO</string>
-				<key>INSTALL_PATH</key>
-				<string>$(BUILT_PRODUCTS_DIR)</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>8.1</string>
-				<key>OTHER_LDFLAGS</key>
-				<string></string>
-				<key>OTHER_LIBTOOLFLAGS</key>
-				<string></string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>5A542615558270527A931779</key>
-		<dict>
-			<key>fileRef</key>
-			<string>663F278C59A46A11704E9A32</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>5EC7FBF713F226603FF47FFA</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>6CD7C351089F21F5B747DA14</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>YES</string>
-				<key>DSTROOT</key>
-				<string>/tmp/xcodeproj.dst</string>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>INSTALL_PATH</key>
-				<string>$(BUILT_PRODUCTS_DIR)</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>8.1</string>
-				<key>OTHER_CFLAGS</key>
-				<array>
-					<string>-DNS_BLOCK_ASSERTIONS=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>OTHER_CPLUSPLUSFLAGS</key>
-				<array>
-					<string>-DNS_BLOCK_ASSERTIONS=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>OTHER_LDFLAGS</key>
-				<string></string>
-				<key>OTHER_LIBTOOLFLAGS</key>
-				<string></string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-				<key>VALIDATE_PRODUCT</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>60B5723E98E92442340712D3</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>archive.ar</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>libPods.a</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>61408EF5318694743410AF16</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CD79AE1170E1BFFFB30B1E00</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>65A00D27BFC6711BD583E44D</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-OwnTracksActivo-MQTTClient.xcconfig</string>
-			<key>path</key>
-			<string>../Pods-OwnTracksActivo-MQTTClient/Pods-OwnTracksActivo-MQTTClient.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>663F278C59A46A11704E9A32</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>MQTTSessionManager.h</string>
-			<key>path</key>
-			<string>MQTTClient/MQTTClient/MQTTSessionManager.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>6CD7C351089F21F5B747DA14</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>path</key>
-			<string>Pods.release.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>763079BE947D2C983DFE9276</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>7C1BDACF8D569661B422E0FB</string>
-				<string>8939C120573548F35B7A7C34</string>
-				<string>88C0254F5C4FC3A28315840B</string>
-				<string>13882721D3D351B0EA7807A6</string>
-				<string>DC62612AE72AB0AC53568CFA</string>
-				<string>A81EF10C536256B2DDB35DF6</string>
-				<string>3F0283706312BB53357FC6CB</string>
-				<string>818C4CC1204253BE956DBF9B</string>
-				<string>3DAA7A3B5947F947BC836794</string>
-				<string>C5A1A47013B6ABC386C5A75B</string>
-				<string>3461D0501C54074F58462AC7</string>
-				<string>663F278C59A46A11704E9A32</string>
-				<string>CA4389800099D89F43DC309C</string>
-				<string>3A44F1BF921ED034986779FF</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>MQTTClient</string>
-			<key>path</key>
-			<string>MQTTClient</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>765BF587601CA0AC2C6F37CB</key>
-		<dict>
-			<key>fileRef</key>
-			<string>88C0254F5C4FC3A28315840B</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>77169DEE77E8AAB6E58958D3</key>
-		<dict>
-			<key>fileRef</key>
-			<string>DC62612AE72AB0AC53568CFA</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>77B86458FE370842F49A4A2D</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>56D11496621986F7140A69E2</string>
-				<string>F34E1665F8DFE01B20B3327A</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>785A4D645612501DBB0498FB</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>514683632A2F047F227289CD</string>
-				<string>9AABBB4C376E090734AD650B</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>79DD4EE7FEE6485E1A8E8631</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>path</key>
-			<string>Pods-OwnTracksActivo.debug.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>7C1BDACF8D569661B422E0FB</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>MQTTClient.h</string>
-			<key>path</key>
-			<string>MQTTClient/MQTTClient/MQTTClient.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>7F7DCB6165D6AA7EB47CECE7</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>9A9B6C6FAF2D9A04C0F4CDA1</string>
-				<string>AD86BDE1C28193AD9750AC05</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>7FB63F3ADB1ED7E77D4B3B67</key>
-		<dict>
-			<key>fileRef</key>
-			<string>95807168F6D7E7543756E551</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>8164B2C014A417C50F6DC7CF</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CD79AE1170E1BFFFB30B1E00</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>818C4CC1204253BE956DBF9B</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>MQTTPersistence.h</string>
-			<key>path</key>
-			<string>MQTTClient/MQTTClient/MQTTPersistence.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>825272954AB2FB4464EAD99D</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>CD79AE1170E1BFFFB30B1E00</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>iOS</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8358DBEBE2F727CF5238E3CE</key>
-		<dict>
-			<key>fileRef</key>
-			<string>C5A1A47013B6ABC386C5A75B</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>84160CC25D0031E7FA894986</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Pods-OwnTracksActivo-acknowledgements.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>88C0254F5C4FC3A28315840B</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>MQTTDecoder.m</string>
-			<key>path</key>
-			<string>MQTTClient/MQTTClient/MQTTDecoder.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>88EFD77375317B87B9427063</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>825272954AB2FB4464EAD99D</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Frameworks</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8939C120573548F35B7A7C34</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>MQTTDecoder.h</string>
-			<key>path</key>
-			<string>MQTTClient/MQTTClient/MQTTDecoder.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>89E5438AC5698C8327D1426F</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text</string>
-			<key>path</key>
-			<string>Pods-acknowledgements.markdown</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8E530804699F816F525E4568</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>path</key>
-			<string>Pods-OwnTracksActivo.release.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8ECE759DD96E5AAB2B8FD03E</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>0A5BC4B8E481D3824BB5971F</string>
-			<key>buildPhases</key>
-			<array>
-				<string>F06A26F113003D0B7F52556D</string>
-				<string>39CB453478838E32FB9D2193</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array>
-				<string>EF7F22FE70CE56DA6523EADA</string>
-			</array>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>Pods</string>
-			<key>productName</key>
-			<string>Pods</string>
-			<key>productReference</key>
-			<string>60B5723E98E92442340712D3</string>
-			<key>productType</key>
-			<string>com.apple.product-type.library.static</string>
-		</dict>
-		<key>95807168F6D7E7543756E551</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>Pods-OwnTracksActivo-MQTTClient-dummy.m</string>
-			<key>path</key>
-			<string>../Pods-OwnTracksActivo-MQTTClient/Pods-OwnTracksActivo-MQTTClient-dummy.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>9933F8EF4847AB04091C961D</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text</string>
-			<key>name</key>
-			<string>Podfile</string>
-			<key>path</key>
-			<string>../Podfile</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-			<key>xcLanguageSpecificationIdentifier</key>
-			<string>xcode.lang.ruby</string>
-		</dict>
-		<key>9A9B6C6FAF2D9A04C0F4CDA1</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>YES</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_DYNAMIC_NO_PIC</key>
-				<string>NO</string>
-				<key>GCC_OPTIMIZATION_LEVEL</key>
-				<string>0</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>DEBUG=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
-				<string>NO</string>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>8.1</string>
-				<key>ONLY_ACTIVE_ARCH</key>
-				<string>YES</string>
-				<key>STRIP_INSTALLED_PRODUCT</key>
-				<string>NO</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>9AABBB4C376E090734AD650B</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>DF5512D65453FFBC19FD1DC1</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>YES</string>
-				<key>DSTROOT</key>
-				<string>/tmp/xcodeproj.dst</string>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>Target Support Files/Pods-OwnTracksActivo-MQTTClient/Pods-OwnTracksActivo-MQTTClient-prefix.pch</string>
-				<key>INSTALL_PATH</key>
-				<string>$(BUILT_PRODUCTS_DIR)</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>8.1</string>
-				<key>OTHER_CFLAGS</key>
-				<array>
-					<string>-DNS_BLOCK_ASSERTIONS=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>OTHER_CPLUSPLUSFLAGS</key>
-				<array>
-					<string>-DNS_BLOCK_ASSERTIONS=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>OTHER_LDFLAGS</key>
-				<string></string>
-				<key>OTHER_LIBTOOLFLAGS</key>
-				<string></string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-				<key>VALIDATE_PRODUCT</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>9E32A710EBE87091793468F9</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>Pods-OwnTracksActivo-environment.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A071661C72CD5BA0DBBA79FA</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>archive.ar</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>libPods-OwnTracksActivo-MQTTClient.a</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>A41AC7A0F46CDFB8F3D1D950</key>
-		<dict>
-			<key>fileRef</key>
-			<string>3F0283706312BB53357FC6CB</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A662F768491F1BB40DE3A69D</key>
-		<dict>
-			<key>fileRef</key>
-			<string>8939C120573548F35B7A7C34</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A6ABADD152FABA62C258936E</key>
-		<dict>
-			<key>fileRef</key>
-			<string>7C1BDACF8D569661B422E0FB</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A81EF10C536256B2DDB35DF6</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>MQTTMessage.h</string>
-			<key>path</key>
-			<string>MQTTClient/MQTTClient/MQTTMessage.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A86419B4E9695B572D075590</key>
-		<dict>
-			<key>fileRef</key>
-			<string>818C4CC1204253BE956DBF9B</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A9A1D395AD05BCB5939AF430</key>
-		<dict>
-			<key>fileRef</key>
-			<string>06CBCF56B69A2ACAC7BAF9CA</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AD86BDE1C28193AD9750AC05</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>NO</string>
-				<key>ENABLE_NS_ASSERTIONS</key>
-				<string>NO</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>RELEASE=1</string>
-				</array>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>8.1</string>
-				<key>STRIP_INSTALLED_PRODUCT</key>
-				<string>NO</string>
-				<key>VALIDATE_PRODUCT</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>ADDF645B3C95ED5E3618165E</key>
-		<dict>
-			<key>fileRef</key>
-			<string>13882721D3D351B0EA7807A6</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AFA7C00831445AF89DBA3839</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>89E5438AC5698C8327D1426F</string>
-				<string>2A68C24521C2B69EE6F17ED5</string>
-				<string>D7BB21E1FC522BF2FE307D96</string>
-				<string>B285D514659A6BC7F56C627B</string>
-				<string>51154384C9CD022A46971E81</string>
-				<string>E10F4F9781BC04341A6B79E0</string>
-				<string>6CD7C351089F21F5B747DA14</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Pods</string>
-			<key>path</key>
-			<string>Target Support Files/Pods</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AFB610C250801113AE7355C9</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A81EF10C536256B2DDB35DF6</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>B285D514659A6BC7F56C627B</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>Pods-environment.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>B7D059573EFD7A79541DF357</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>15D954478F0999C15D98CD09</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>B983931CA9C72A45642C94D4</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>77B86458FE370842F49A4A2D</string>
-			<key>buildPhases</key>
-			<array>
-				<string>44594EA9239000E72C798476</string>
-				<string>B7D059573EFD7A79541DF357</string>
-				<string>06EB9509009526B406E547D3</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>Pods-MQTTClient</string>
-			<key>productName</key>
-			<string>Pods-MQTTClient</string>
-			<key>productReference</key>
-			<string>FE9E459F7717224C542C5841</string>
-			<key>productType</key>
-			<string>com.apple.product-type.library.static</string>
-		</dict>
-		<key>BF8886D1D0A209FF61A41D78</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>DB7C1E1C74854FC34FD54E2D</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>B983931CA9C72A45642C94D4</string>
-			<key>remoteInfo</key>
-			<string>Pods-MQTTClient</string>
-		</dict>
-		<key>C5A1A47013B6ABC386C5A75B</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>MQTTSession.h</string>
-			<key>path</key>
-			<string>MQTTClient/MQTTClient/MQTTSession.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C791B5D368D9035FFA7BA840</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>61408EF5318694743410AF16</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>CA4389800099D89F43DC309C</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>MQTTSessionManager.m</string>
-			<key>path</key>
-			<string>MQTTClient/MQTTClient/MQTTSessionManager.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CD79AE1170E1BFFFB30B1E00</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>Foundation.framework</string>
-			<key>path</key>
-			<string>Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Foundation.framework</string>
-			<key>sourceTree</key>
-			<string>DEVELOPER_DIR</string>
-		</dict>
-		<key>CDEFC06E7026D2AEF77E61C8</key>
-		<dict>
-			<key>fileRef</key>
-			<string>3461D0501C54074F58462AC7</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>D011E4FECC1F72EF26FB9377</key>
-		<dict>
-			<key>fileRef</key>
-			<string>3DAA7A3B5947F947BC836794</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>D270DFDA53B5B779A896045C</key>
-		<dict>
-			<key>fileRef</key>
-			<string>818C4CC1204253BE956DBF9B</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>D331F44D8BF3984BD85580AA</key>
-		<dict>
-			<key>fileRef</key>
-			<string>3F0283706312BB53357FC6CB</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>D5FDDA36C64A8BC70CE6E12A</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CD79AE1170E1BFFFB30B1E00</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>D7BB21E1FC522BF2FE307D96</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>Pods-dummy.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D93EFEB7239B6997C5109058</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>38EF59CF50D02A370F39266E</string>
-				<string>84160CC25D0031E7FA894986</string>
-				<string>06CBCF56B69A2ACAC7BAF9CA</string>
-				<string>9E32A710EBE87091793468F9</string>
-				<string>26B6C7B7319E4084C3C63D53</string>
-				<string>79DD4EE7FEE6485E1A8E8631</string>
-				<string>8E530804699F816F525E4568</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Pods-OwnTracksActivo</string>
-			<key>path</key>
-			<string>Target Support Files/Pods-OwnTracksActivo</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D97352F07C73F3B10CB722C2</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>8E530804699F816F525E4568</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>YES</string>
-				<key>DSTROOT</key>
-				<string>/tmp/xcodeproj.dst</string>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>INSTALL_PATH</key>
-				<string>$(BUILT_PRODUCTS_DIR)</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>8.1</string>
-				<key>OTHER_CFLAGS</key>
-				<array>
-					<string>-DNS_BLOCK_ASSERTIONS=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>OTHER_CPLUSPLUSFLAGS</key>
-				<array>
-					<string>-DNS_BLOCK_ASSERTIONS=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>OTHER_LDFLAGS</key>
-				<string></string>
-				<key>OTHER_LIBTOOLFLAGS</key>
-				<string></string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-				<key>VALIDATE_PRODUCT</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>D9C6615CE674DF8F4C6154D9</key>
-		<dict>
-			<key>fileRef</key>
-			<string>7C1BDACF8D569661B422E0FB</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>DB7C1E1C74854FC34FD54E2D</key>
-		<dict>
-			<key>attributes</key>
-			<dict>
-				<key>LastUpgradeCheck</key>
-				<string>0510</string>
-			</dict>
-			<key>buildConfigurationList</key>
-			<string>7F7DCB6165D6AA7EB47CECE7</string>
-			<key>compatibilityVersion</key>
-			<string>Xcode 3.2</string>
-			<key>developmentRegion</key>
-			<string>English</string>
-			<key>hasScannedForEncodings</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXProject</string>
-			<key>knownRegions</key>
-			<array>
-				<string>en</string>
-			</array>
-			<key>mainGroup</key>
-			<string>5661138E1A39730E4EF50F84</string>
-			<key>productRefGroup</key>
-			<string>079D303E046F23403DAA7A0F</string>
-			<key>projectDirPath</key>
-			<string></string>
-			<key>projectReferences</key>
-			<array/>
-			<key>projectRoot</key>
-			<string></string>
-			<key>targets</key>
-			<array>
-				<string>8ECE759DD96E5AAB2B8FD03E</string>
-				<string>B983931CA9C72A45642C94D4</string>
-				<string>232BB07ACF85C843AE1447D6</string>
-				<string>005896A57A6D81CF0A270865</string>
-			</array>
-		</dict>
-		<key>DC62612AE72AB0AC53568CFA</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>MQTTEncoder.m</string>
-			<key>path</key>
-			<string>MQTTClient/MQTTClient/MQTTEncoder.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>DE3C38774724283C042CEEA9</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CA4389800099D89F43DC309C</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>DE61574B6A90EFF7DDDBF099</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>E10F4F9781BC04341A6B79E0</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>NO</string>
-				<key>DSTROOT</key>
-				<string>/tmp/xcodeproj.dst</string>
-				<key>GCC_DYNAMIC_NO_PIC</key>
-				<string>NO</string>
-				<key>GCC_OPTIMIZATION_LEVEL</key>
-				<string>0</string>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>DEBUG=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
-				<string>NO</string>
-				<key>INSTALL_PATH</key>
-				<string>$(BUILT_PRODUCTS_DIR)</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>8.1</string>
-				<key>OTHER_LDFLAGS</key>
-				<string></string>
-				<key>OTHER_LIBTOOLFLAGS</key>
-				<string></string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>DF5512D65453FFBC19FD1DC1</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-OwnTracksActivo-MQTTClient-Private.xcconfig</string>
-			<key>path</key>
-			<string>../Pods-OwnTracksActivo-MQTTClient/Pods-OwnTracksActivo-MQTTClient-Private.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>E09BE09EFE3391137F276392</key>
-		<dict>
-			<key>fileRef</key>
-			<string>3461D0501C54074F58462AC7</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>E10F4F9781BC04341A6B79E0</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>path</key>
-			<string>Pods.debug.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>E1C3B545DA45D5DD00D34FDA</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>FE4716026CDE8373E7AE094B</string>
-				<string>D97352F07C73F3B10CB722C2</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>E2E5DC207C354E56683D7A07</key>
-		<dict>
-			<key>fileRef</key>
-			<string>663F278C59A46A11704E9A32</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>EAFE4BA35C29A4AF0FBF0533</key>
-		<dict>
-			<key>fileRef</key>
-			<string>DC62612AE72AB0AC53568CFA</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>ED61B1EEB3B6CA78A94B6738</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>path</key>
-			<string>Pods-MQTTClient-Private.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>EF7F22FE70CE56DA6523EADA</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>name</key>
-			<string>Pods-MQTTClient</string>
-			<key>target</key>
-			<string>B983931CA9C72A45642C94D4</string>
-			<key>targetProxy</key>
-			<string>BF8886D1D0A209FF61A41D78</string>
-		</dict>
-		<key>F06A26F113003D0B7F52556D</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>053078958E9EDBA22BCC9728</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>F21ADCA781C8D80F43F72349</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CA4389800099D89F43DC309C</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F34E1665F8DFE01B20B3327A</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>ED61B1EEB3B6CA78A94B6738</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>YES</string>
-				<key>DSTROOT</key>
-				<string>/tmp/xcodeproj.dst</string>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>Target Support Files/Pods-MQTTClient/Pods-MQTTClient-prefix.pch</string>
-				<key>INSTALL_PATH</key>
-				<string>$(BUILT_PRODUCTS_DIR)</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>8.1</string>
-				<key>OTHER_CFLAGS</key>
-				<array>
-					<string>-DNS_BLOCK_ASSERTIONS=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>OTHER_CPLUSPLUSFLAGS</key>
-				<array>
-					<string>-DNS_BLOCK_ASSERTIONS=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>OTHER_LDFLAGS</key>
-				<string></string>
-				<key>OTHER_LIBTOOLFLAGS</key>
-				<string></string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-				<key>VALIDATE_PRODUCT</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>F5681EDCA361908312343AC8</key>
-		<dict>
-			<key>fileRef</key>
-			<string>3DAA7A3B5947F947BC836794</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F688980D967F0EF1F4A413D0</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>Pods-OwnTracksActivo-MQTTClient-prefix.pch</string>
-			<key>path</key>
-			<string>../Pods-OwnTracksActivo-MQTTClient/Pods-OwnTracksActivo-MQTTClient-prefix.pch</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F82AFF90F76DCEF64E6BF0E3</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>D9C6615CE674DF8F4C6154D9</string>
-				<string>2C90D6CFA80172DDB3D78751</string>
-				<string>ADDF645B3C95ED5E3618165E</string>
-				<string>3399312CC238466764733B13</string>
-				<string>D270DFDA53B5B779A896045C</string>
-				<string>8358DBEBE2F727CF5238E3CE</string>
-				<string>5A542615558270527A931779</string>
-			</array>
-			<key>isa</key>
-			<string>PBXHeadersBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>FE4716026CDE8373E7AE094B</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>79DD4EE7FEE6485E1A8E8631</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>NO</string>
-				<key>DSTROOT</key>
-				<string>/tmp/xcodeproj.dst</string>
-				<key>GCC_DYNAMIC_NO_PIC</key>
-				<string>NO</string>
-				<key>GCC_OPTIMIZATION_LEVEL</key>
-				<string>0</string>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>DEBUG=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
-				<string>NO</string>
-				<key>INSTALL_PATH</key>
-				<string>$(BUILT_PRODUCTS_DIR)</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>8.1</string>
-				<key>OTHER_LDFLAGS</key>
-				<string></string>
-				<key>OTHER_LIBTOOLFLAGS</key>
-				<string></string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>FE9E459F7717224C542C5841</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>archive.ar</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>libPods-MQTTClient.a</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>FF623642015AEC725649302D</key>
-		<dict>
-			<key>fileRef</key>
-			<string>4634F8161F6B12FBF1E3F29F</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-	</dict>
-	<key>rootObject</key>
-	<string>DB7C1E1C74854FC34FD54E2D</string>
-</dict>
-</plist>
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		13A84C8AF635BBF0EC7796B168035F80 /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 37FFB537488420EBDBB6D9DC236EE1D3 /* Pods-dummy.m */; };
+		21544F5420492386FF78DC85982507BE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42D8A111F2A279D4300ABE69C3A5FE07 /* Foundation.framework */; };
+		29910FA7475B0BAD15678BF25182343A /* MQTTDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = ED57E844686F198D84AC2A515633753E /* MQTTDecoder.m */; };
+		2F053077326C41843090117826B73C7E /* MQTTSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 715E513186BB6556AC86E6629E2312AE /* MQTTSession.m */; };
+		392F574AB5322C0050B27E267D8FA305 /* Pods-OwnTracksActivo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD932A5DFF842F42D7AF2213A39434B /* Pods-OwnTracksActivo-dummy.m */; };
+		3971F142980557BDB491DEEC046CD35F /* MQTTDecoder.h in Headers */ = {isa = PBXBuildFile; fileRef = B5190C6D0C78A95C42429007CC485A20 /* MQTTDecoder.h */; };
+		4B3B1802A367D38B952227CBD165A4BD /* MQTTSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = FA0231F3F4E5AEDAE079C6AAE3CA216A /* MQTTSessionManager.h */; };
+		523A721E744CB49358EC69765A91B8AC /* MQTTSSLSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = A50F4B74199130EE3E775247FCE2A9C5 /* MQTTSSLSecurityPolicy.m */; };
+		63B781C4B416FB54771FA8527EC24B55 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42D8A111F2A279D4300ABE69C3A5FE07 /* Foundation.framework */; };
+		667562FD3BC21F2D3DE2421F320A20C9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42D8A111F2A279D4300ABE69C3A5FE07 /* Foundation.framework */; };
+		68BC064E4D7AE42F925D8E39DC2D34BB /* MQTTPersistence.h in Headers */ = {isa = PBXBuildFile; fileRef = E38FA9F4F39FFC3E43CDC3E5DB5AB0CE /* MQTTPersistence.h */; };
+		68CB9D5CD1A57A7FA163B34869D3E90D /* MQTTEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 36461D761295AB30274B009471F45A0F /* MQTTEncoder.m */; };
+		6A343C5C934CFD4CEB554C197D772D90 /* MQTTSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A57EA82A9F1AAFAE67EB74C45F619EA /* MQTTSessionManager.m */; };
+		7BC33201AEC4647401FC1922CEC90352 /* MQTTClient-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2F58DF58D29501D22BCD0DB6D8C295 /* MQTTClient-dummy.m */; };
+		C36555EC631A8F4A17A3AA49D8F2C2C2 /* MQTTEncoder.h in Headers */ = {isa = PBXBuildFile; fileRef = E20AA710ED923F6AF78C311EED28F0DF /* MQTTEncoder.h */; };
+		C86086EE2BB2E2B62868335A3FD680F5 /* MQTTMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DF1717F998D6B0B218A62DAC41DF00E /* MQTTMessage.m */; };
+		C8C360F3ACE648F5514E523E036DFE8A /* MQTTPersistence.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E90B466C068A8F9979F147251541BD /* MQTTPersistence.m */; };
+		D375553B5FC1649DBCA4C4554CD4A41E /* MQTTClient.h in Headers */ = {isa = PBXBuildFile; fileRef = CFC94F1EA5999703BE30A28042C88EC6 /* MQTTClient.h */; };
+		E3E206C66973F92AAED0711CC6CA2269 /* MQTTMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = BFF63AF0FCCAD33AC158AC68AFC99C09 /* MQTTMessage.h */; };
+		E674F8E387827118985C0F37122AF1B2 /* MQTTSession.h in Headers */ = {isa = PBXBuildFile; fileRef = 48EFA8AAE30680CDD9E1124C028DF9F2 /* MQTTSession.h */; };
+		F97DD3C3729C5A9AD97FF112BD0BC760 /* MQTTSSLSecurityPolicy.h in Headers */ = {isa = PBXBuildFile; fileRef = 378D4BA7A400BEAE5C4EF000F8CBEB9F /* MQTTSSLSecurityPolicy.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6E0D397CCFA6C349FB3AA030E514573C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 009C658CEEC308E9732F87E48E15BD83;
+			remoteInfo = MQTTClient;
+		};
+		953522652ACA03A964D4EC1973891A36 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 009C658CEEC308E9732F87E48E15BD83;
+			remoteInfo = MQTTClient;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1F84D19129753D046058E900EDA44C77 /* Pods-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-resources.sh"; sourceTree = "<group>"; };
+		21E90B466C068A8F9979F147251541BD /* MQTTPersistence.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MQTTPersistence.m; path = MQTTClient/MQTTClient/MQTTPersistence.m; sourceTree = "<group>"; };
+		28975229DA02681D8F32FBC2C604AEA7 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		2DF1717F998D6B0B218A62DAC41DF00E /* MQTTMessage.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MQTTMessage.m; path = MQTTClient/MQTTClient/MQTTMessage.m; sourceTree = "<group>"; };
+		2F2577E4A820DEDA9AA239B135E6D766 /* MQTTClient.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MQTTClient.xcconfig; sourceTree = "<group>"; };
+		36461D761295AB30274B009471F45A0F /* MQTTEncoder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MQTTEncoder.m; path = MQTTClient/MQTTClient/MQTTEncoder.m; sourceTree = "<group>"; };
+		378D4BA7A400BEAE5C4EF000F8CBEB9F /* MQTTSSLSecurityPolicy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MQTTSSLSecurityPolicy.h; path = MQTTClient/MQTTClient/MQTTSSLSecurityPolicy.h; sourceTree = "<group>"; };
+		37FFB537488420EBDBB6D9DC236EE1D3 /* Pods-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-dummy.m"; sourceTree = "<group>"; };
+		3AD932A5DFF842F42D7AF2213A39434B /* Pods-OwnTracksActivo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-OwnTracksActivo-dummy.m"; sourceTree = "<group>"; };
+		3E54F7CB2EC5EAC9546E16229EA6E6F9 /* MQTTClient-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MQTTClient-prefix.pch"; sourceTree = "<group>"; };
+		40D8D8E14EB41235AC0F6FA948E1D081 /* Pods-OwnTracksActivo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-OwnTracksActivo.debug.xcconfig"; sourceTree = "<group>"; };
+		42D8A111F2A279D4300ABE69C3A5FE07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		44692B56EDE82D66618B71ED517B3A07 /* libPods-OwnTracksActivo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OwnTracksActivo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		48EFA8AAE30680CDD9E1124C028DF9F2 /* MQTTSession.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MQTTSession.h; path = MQTTClient/MQTTClient/MQTTSession.h; sourceTree = "<group>"; };
+		715E513186BB6556AC86E6629E2312AE /* MQTTSession.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MQTTSession.m; path = MQTTClient/MQTTClient/MQTTSession.m; sourceTree = "<group>"; };
+		874B37465B130A6B577701500620064A /* Pods-OwnTracksActivo-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-OwnTracksActivo-resources.sh"; sourceTree = "<group>"; };
+		8765C2E5798775263AA438DE40D51B2B /* Pods-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-acknowledgements.plist"; sourceTree = "<group>"; };
+		8A57EA82A9F1AAFAE67EB74C45F619EA /* MQTTSessionManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MQTTSessionManager.m; path = MQTTClient/MQTTClient/MQTTSessionManager.m; sourceTree = "<group>"; };
+		9250B09ED20425D57DA7F1C05FC6837D /* libMQTTClient.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMQTTClient.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		A50F4B74199130EE3E775247FCE2A9C5 /* MQTTSSLSecurityPolicy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MQTTSSLSecurityPolicy.m; path = MQTTClient/MQTTClient/MQTTSSLSecurityPolicy.m; sourceTree = "<group>"; };
+		A64557C4EFFA7B88964156DFE135DDD0 /* Pods-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-acknowledgements.markdown"; sourceTree = "<group>"; };
+		A66B747A14FCDE9EEBCA7F154C7836C5 /* Pods-OwnTracksActivo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-OwnTracksActivo-acknowledgements.plist"; sourceTree = "<group>"; };
+		AA2F58DF58D29501D22BCD0DB6D8C295 /* MQTTClient-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MQTTClient-dummy.m"; sourceTree = "<group>"; };
+		B5190C6D0C78A95C42429007CC485A20 /* MQTTDecoder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MQTTDecoder.h; path = MQTTClient/MQTTClient/MQTTDecoder.h; sourceTree = "<group>"; };
+		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		BFF63AF0FCCAD33AC158AC68AFC99C09 /* MQTTMessage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MQTTMessage.h; path = MQTTClient/MQTTClient/MQTTMessage.h; sourceTree = "<group>"; };
+		C430185189FA079D8AC5C5AAD8D17134 /* MQTTClient-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "MQTTClient-Private.xcconfig"; sourceTree = "<group>"; };
+		C51C490D3FC003617CF2348996998731 /* Pods-OwnTracksActivo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-OwnTracksActivo-acknowledgements.markdown"; sourceTree = "<group>"; };
+		C7565BD4650682092FD6D3C83F25F316 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.release.xcconfig; sourceTree = "<group>"; };
+		CF5AF0949ACCCDC4DC5B7B3657DE13A2 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.debug.xcconfig; sourceTree = "<group>"; };
+		CFC94F1EA5999703BE30A28042C88EC6 /* MQTTClient.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MQTTClient.h; path = MQTTClient/MQTTClient/MQTTClient.h; sourceTree = "<group>"; };
+		E20AA710ED923F6AF78C311EED28F0DF /* MQTTEncoder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MQTTEncoder.h; path = MQTTClient/MQTTClient/MQTTEncoder.h; sourceTree = "<group>"; };
+		E38FA9F4F39FFC3E43CDC3E5DB5AB0CE /* MQTTPersistence.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MQTTPersistence.h; path = MQTTClient/MQTTClient/MQTTPersistence.h; sourceTree = "<group>"; };
+		ED57E844686F198D84AC2A515633753E /* MQTTDecoder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MQTTDecoder.m; path = MQTTClient/MQTTClient/MQTTDecoder.m; sourceTree = "<group>"; };
+		F9E4C5DE6D17979B0E73F39364B8CBD5 /* Pods-OwnTracksActivo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-OwnTracksActivo.release.xcconfig"; sourceTree = "<group>"; };
+		FA0231F3F4E5AEDAE079C6AAE3CA216A /* MQTTSessionManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MQTTSessionManager.h; path = MQTTClient/MQTTClient/MQTTSessionManager.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BBA949282B95ED61B108E5D3A7B3E798 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63B781C4B416FB54771FA8527EC24B55 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB39BC548134FDCC2C7589714351DD28 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21544F5420492386FF78DC85982507BE /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F9125D5EE36FEC8DB4415AA27F070C61 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				667562FD3BC21F2D3DE2421F320A20C9 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		00E9719F65F7407FFBD5EB32E9362A65 /* MQTTClient */ = {
+			isa = PBXGroup;
+			children = (
+				CFC94F1EA5999703BE30A28042C88EC6 /* MQTTClient.h */,
+				B5190C6D0C78A95C42429007CC485A20 /* MQTTDecoder.h */,
+				ED57E844686F198D84AC2A515633753E /* MQTTDecoder.m */,
+				E20AA710ED923F6AF78C311EED28F0DF /* MQTTEncoder.h */,
+				36461D761295AB30274B009471F45A0F /* MQTTEncoder.m */,
+				BFF63AF0FCCAD33AC158AC68AFC99C09 /* MQTTMessage.h */,
+				2DF1717F998D6B0B218A62DAC41DF00E /* MQTTMessage.m */,
+				E38FA9F4F39FFC3E43CDC3E5DB5AB0CE /* MQTTPersistence.h */,
+				21E90B466C068A8F9979F147251541BD /* MQTTPersistence.m */,
+				378D4BA7A400BEAE5C4EF000F8CBEB9F /* MQTTSSLSecurityPolicy.h */,
+				A50F4B74199130EE3E775247FCE2A9C5 /* MQTTSSLSecurityPolicy.m */,
+				48EFA8AAE30680CDD9E1124C028DF9F2 /* MQTTSession.h */,
+				715E513186BB6556AC86E6629E2312AE /* MQTTSession.m */,
+				FA0231F3F4E5AEDAE079C6AAE3CA216A /* MQTTSessionManager.h */,
+				8A57EA82A9F1AAFAE67EB74C45F619EA /* MQTTSessionManager.m */,
+				DB49DD39F2EFAF6F864485CE7F289385 /* Support Files */,
+			);
+			path = MQTTClient;
+			sourceTree = "<group>";
+		};
+		53F661C0CA7190D2CF05023FB33D61E4 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				42D8A111F2A279D4300ABE69C3A5FE07 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		5481A6CF5ED2319EC80DFCE0EBA1AA34 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				6B87148BD269B750C7B6D880304994DE /* Pods */,
+				70EB6AA4C30E73D54C52790BE5DE8EC4 /* Pods-OwnTracksActivo */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		6B87148BD269B750C7B6D880304994DE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A64557C4EFFA7B88964156DFE135DDD0 /* Pods-acknowledgements.markdown */,
+				8765C2E5798775263AA438DE40D51B2B /* Pods-acknowledgements.plist */,
+				37FFB537488420EBDBB6D9DC236EE1D3 /* Pods-dummy.m */,
+				1F84D19129753D046058E900EDA44C77 /* Pods-resources.sh */,
+				CF5AF0949ACCCDC4DC5B7B3657DE13A2 /* Pods.debug.xcconfig */,
+				C7565BD4650682092FD6D3C83F25F316 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			path = "Target Support Files/Pods";
+			sourceTree = "<group>";
+		};
+		70EB6AA4C30E73D54C52790BE5DE8EC4 /* Pods-OwnTracksActivo */ = {
+			isa = PBXGroup;
+			children = (
+				C51C490D3FC003617CF2348996998731 /* Pods-OwnTracksActivo-acknowledgements.markdown */,
+				A66B747A14FCDE9EEBCA7F154C7836C5 /* Pods-OwnTracksActivo-acknowledgements.plist */,
+				3AD932A5DFF842F42D7AF2213A39434B /* Pods-OwnTracksActivo-dummy.m */,
+				874B37465B130A6B577701500620064A /* Pods-OwnTracksActivo-resources.sh */,
+				40D8D8E14EB41235AC0F6FA948E1D081 /* Pods-OwnTracksActivo.debug.xcconfig */,
+				F9E4C5DE6D17979B0E73F39364B8CBD5 /* Pods-OwnTracksActivo.release.xcconfig */,
+			);
+			name = "Pods-OwnTracksActivo";
+			path = "Target Support Files/Pods-OwnTracksActivo";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				B2F9EBA4E8C537FB8574EA9DA1BEADAA /* Pods */,
+				CCA510CFBEA2D207524CDA0D73C3B561 /* Products */,
+				5481A6CF5ED2319EC80DFCE0EBA1AA34 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		B2F9EBA4E8C537FB8574EA9DA1BEADAA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				00E9719F65F7407FFBD5EB32E9362A65 /* MQTTClient */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				53F661C0CA7190D2CF05023FB33D61E4 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CCA510CFBEA2D207524CDA0D73C3B561 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9250B09ED20425D57DA7F1C05FC6837D /* libMQTTClient.a */,
+				28975229DA02681D8F32FBC2C604AEA7 /* libPods.a */,
+				44692B56EDE82D66618B71ED517B3A07 /* libPods-OwnTracksActivo.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DB49DD39F2EFAF6F864485CE7F289385 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				2F2577E4A820DEDA9AA239B135E6D766 /* MQTTClient.xcconfig */,
+				C430185189FA079D8AC5C5AAD8D17134 /* MQTTClient-Private.xcconfig */,
+				AA2F58DF58D29501D22BCD0DB6D8C295 /* MQTTClient-dummy.m */,
+				3E54F7CB2EC5EAC9546E16229EA6E6F9 /* MQTTClient-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/MQTTClient";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		D5FE6881749A4FBA6C4629D4712C1C7A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D375553B5FC1649DBCA4C4554CD4A41E /* MQTTClient.h in Headers */,
+				3971F142980557BDB491DEEC046CD35F /* MQTTDecoder.h in Headers */,
+				C36555EC631A8F4A17A3AA49D8F2C2C2 /* MQTTEncoder.h in Headers */,
+				E3E206C66973F92AAED0711CC6CA2269 /* MQTTMessage.h in Headers */,
+				68BC064E4D7AE42F925D8E39DC2D34BB /* MQTTPersistence.h in Headers */,
+				F97DD3C3729C5A9AD97FF112BD0BC760 /* MQTTSSLSecurityPolicy.h in Headers */,
+				E674F8E387827118985C0F37122AF1B2 /* MQTTSession.h in Headers */,
+				4B3B1802A367D38B952227CBD165A4BD /* MQTTSessionManager.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		009C658CEEC308E9732F87E48E15BD83 /* MQTTClient */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AB9C464CA016B443274D9D804388D9B4 /* Build configuration list for PBXNativeTarget "MQTTClient" */;
+			buildPhases = (
+				FA38D024165DFA50AC8829E13BB08315 /* Sources */,
+				F9125D5EE36FEC8DB4415AA27F070C61 /* Frameworks */,
+				D5FE6881749A4FBA6C4629D4712C1C7A /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MQTTClient;
+			productName = MQTTClient;
+			productReference = 9250B09ED20425D57DA7F1C05FC6837D /* libMQTTClient.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		493A385E2410123A75AE15D62FA9EA5C /* Pods */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 18724B39B496F71ECCC5D5AC35420826 /* Build configuration list for PBXNativeTarget "Pods" */;
+			buildPhases = (
+				CB0D0B68AAF7F23B7A2658B4511C1AAE /* Sources */,
+				BBA949282B95ED61B108E5D3A7B3E798 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				17276EC601D78A4AA47D3E26C9E80694 /* PBXTargetDependency */,
+			);
+			name = Pods;
+			productName = Pods;
+			productReference = 28975229DA02681D8F32FBC2C604AEA7 /* libPods.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		A89CCE0FADE11FACAEF002209E2529AC /* Pods-OwnTracksActivo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1BA2B1EAFFBCB3184BC3D343273CE0C3 /* Build configuration list for PBXNativeTarget "Pods-OwnTracksActivo" */;
+			buildPhases = (
+				6FF10F9588779AAD5AA5BA23F2D346F8 /* Sources */,
+				EB39BC548134FDCC2C7589714351DD28 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B78B6F1CE3B0B8C1408AB65037A86405 /* PBXTargetDependency */,
+			);
+			name = "Pods-OwnTracksActivo";
+			productName = "Pods-OwnTracksActivo";
+			productReference = 44692B56EDE82D66618B71ED517B3A07 /* libPods-OwnTracksActivo.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = CCA510CFBEA2D207524CDA0D73C3B561 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				009C658CEEC308E9732F87E48E15BD83 /* MQTTClient */,
+				493A385E2410123A75AE15D62FA9EA5C /* Pods */,
+				A89CCE0FADE11FACAEF002209E2529AC /* Pods-OwnTracksActivo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6FF10F9588779AAD5AA5BA23F2D346F8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				392F574AB5322C0050B27E267D8FA305 /* Pods-OwnTracksActivo-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB0D0B68AAF7F23B7A2658B4511C1AAE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				13A84C8AF635BBF0EC7796B168035F80 /* Pods-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA38D024165DFA50AC8829E13BB08315 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7BC33201AEC4647401FC1922CEC90352 /* MQTTClient-dummy.m in Sources */,
+				29910FA7475B0BAD15678BF25182343A /* MQTTDecoder.m in Sources */,
+				68CB9D5CD1A57A7FA163B34869D3E90D /* MQTTEncoder.m in Sources */,
+				C86086EE2BB2E2B62868335A3FD680F5 /* MQTTMessage.m in Sources */,
+				C8C360F3ACE648F5514E523E036DFE8A /* MQTTPersistence.m in Sources */,
+				523A721E744CB49358EC69765A91B8AC /* MQTTSSLSecurityPolicy.m in Sources */,
+				2F053077326C41843090117826B73C7E /* MQTTSession.m in Sources */,
+				6A343C5C934CFD4CEB554C197D772D90 /* MQTTSessionManager.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		17276EC601D78A4AA47D3E26C9E80694 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MQTTClient;
+			target = 009C658CEEC308E9732F87E48E15BD83 /* MQTTClient */;
+			targetProxy = 953522652ACA03A964D4EC1973891A36 /* PBXContainerItemProxy */;
+		};
+		B78B6F1CE3B0B8C1408AB65037A86405 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MQTTClient;
+			target = 009C658CEEC308E9732F87E48E15BD83 /* MQTTClient */;
+			targetProxy = 6E0D397CCFA6C349FB3AA030E514573C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0673BB4E71DDB4B2A4BA79BF8AF28DE7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C430185189FA079D8AC5C5AAD8D17134 /* MQTTClient-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/MQTTClient/MQTTClient-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		8039C720E2C6B831C9A2A8CFBDF1F5B7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CF5AF0949ACCCDC4DC5B7B3657DE13A2 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		9EB645C612834738B99727720210C23E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		A7B0348824AAADD91DABF82424BE8890 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 40D8D8E14EB41235AC0F6FA948E1D081 /* Pods-OwnTracksActivo.debug.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		ABA08FC9336C164DDE1C578E333521AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C7565BD4650682092FD6D3C83F25F316 /* Pods.release.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		D38B07BE08A38D255336EC1AAC6E79CC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C430185189FA079D8AC5C5AAD8D17134 /* MQTTClient-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/MQTTClient/MQTTClient-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		E39CD1E764776175CB82EEC82A6C9948 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FE3A60D7FF0DFE3B867FFCCA5A9A27D9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F9E4C5DE6D17979B0E73F39364B8CBD5 /* Pods-OwnTracksActivo.release.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		18724B39B496F71ECCC5D5AC35420826 /* Build configuration list for PBXNativeTarget "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8039C720E2C6B831C9A2A8CFBDF1F5B7 /* Debug */,
+				ABA08FC9336C164DDE1C578E333521AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1BA2B1EAFFBCB3184BC3D343273CE0C3 /* Build configuration list for PBXNativeTarget "Pods-OwnTracksActivo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A7B0348824AAADD91DABF82424BE8890 /* Debug */,
+				FE3A60D7FF0DFE3B867FFCCA5A9A27D9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9EB645C612834738B99727720210C23E /* Debug */,
+				E39CD1E764776175CB82EEC82A6C9948 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AB9C464CA016B443274D9D804388D9B4 /* Build configuration list for PBXNativeTarget "MQTTClient" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D38B07BE08A38D255336EC1AAC6E79CC /* Debug */,
+				0673BB4E71DDB4B2A4BA79BF8AF28DE7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

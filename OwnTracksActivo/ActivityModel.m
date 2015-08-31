@@ -85,7 +85,7 @@ static ActivityModel *theActivityModel;
                                      onTopic:[NSString stringWithFormat:@"%@/%.0f",
                                               [[NSUserDefaults standardUserDefaults] stringForKey:@"Publish"],
                                               [[NSDate date] timeIntervalSince1970]]
-                                      retain:true
+                                      retain:false
                                          qos:MQTTQosLevelAtLeastOnce];
         
     }
