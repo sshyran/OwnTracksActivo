@@ -30,8 +30,6 @@
 		84A53B011AF396D200F22D15 /* Pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 84A53AFE1AF396D200F22D15 /* Pause.png */; };
 		84A53B021AF396D200F22D15 /* Pause.svg in Resources */ = {isa = PBXBuildFile; fileRef = 84A53AFF1AF396D200F22D15 /* Pause.svg */; };
 		84A53B031AF396D200F22D15 /* Pause@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84A53B001AF396D200F22D15 /* Pause@2x.png */; };
-		84A92BEC1AE8F036005E2095 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A92BEA1AE8F036005E2095 /* Crashlytics.framework */; };
-		84A92BED1AE8F036005E2095 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A92BEB1AE8F036005E2095 /* Fabric.framework */; };
 		84D113A21AECBAB7005F8F4B /* Play.svg in Resources */ = {isa = PBXBuildFile; fileRef = 84D113A01AECBAB7005F8F4B /* Play.svg */; };
 		84D113A31AECBAB7005F8F4B /* Stop.svg in Resources */ = {isa = PBXBuildFile; fileRef = 84D113A11AECBAB7005F8F4B /* Stop.svg */; };
 		84D113A81AECBBEB005F8F4B /* Play.png in Resources */ = {isa = PBXBuildFile; fileRef = 84D113A41AECBBEB005F8F4B /* Play.png */; };
@@ -91,8 +89,6 @@
 		84A53AFE1AF396D200F22D15 /* Pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pause.png; sourceTree = "<group>"; };
 		84A53AFF1AF396D200F22D15 /* Pause.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Pause.svg; sourceTree = "<group>"; };
 		84A53B001AF396D200F22D15 /* Pause@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Pause@2x.png"; sourceTree = "<group>"; };
-		84A92BEA1AE8F036005E2095 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
-		84A92BEB1AE8F036005E2095 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		84D1139F1AECB10E005F8F4B /* OwnTracksActivo 0.0.3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "OwnTracksActivo 0.0.3.xcdatamodel"; sourceTree = "<group>"; };
 		84D113A01AECBAB7005F8F4B /* Play.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Play.svg; sourceTree = "<group>"; };
 		84D113A11AECBAB7005F8F4B /* Stop.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Stop.svg; sourceTree = "<group>"; };
@@ -109,9 +105,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8488C5BC1AF2559B004DD6FF /* CoreLocation.framework in Frameworks */,
-				84A92BEC1AE8F036005E2095 /* Crashlytics.framework in Frameworks */,
 				3E37EE97BF6D5A9FB64747A2 /* libPods.a in Frameworks */,
-				84A92BED1AE8F036005E2095 /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,8 +132,6 @@
 			isa = PBXGroup;
 			children = (
 				8488C5BB1AF2559B004DD6FF /* CoreLocation.framework */,
-				84A92BEA1AE8F036005E2095 /* Crashlytics.framework */,
-				84A92BEB1AE8F036005E2095 /* Fabric.framework */,
 				4ACAC2D4B7A19C264F8D92C0 /* libPods.a */,
 			);
 			name = Frameworks;
@@ -248,6 +240,7 @@
 				848BD64F1AE78FC90004E664 /* Resources */,
 				A0A6EF5E2B15C996B83AE900 /* Copy Pods Resources */,
 				84A92BE91AE8F007005E2095 /* ShellScript */,
+				4EC072763BAB2008D7B1EECF /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -282,7 +275,7 @@
 		848BD6491AE78FC90004E664 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0630;
+				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = OwnTracks;
 				TargetAttributes = {
 					848BD6501AE78FC90004E664 = {
@@ -365,6 +358,21 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		4EC072763BAB2008D7B1EECF /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		84A92BE91AE8F007005E2095 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -376,7 +384,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "./Fabric.framework/run d0b0c708e43f69036ebedad1766ad086074d30f6 afbb978d421ea300ef93b42e9cbb24582aa85ce48f6294656153d911727dafce";
+			shellScript = "FABRIC_APIKEY=$(cat ${SRCROOT}/fabric.apikey)\\nFABRIC_BUILDSECRET=$(cat ${SRCROOT}/fabric.buildsecret)\\n./Pods/Fabric.framework/run ${FABRIC_APIKEY} ${FABRIC_BUILDSECRET}";
 		};
 		A0A6EF5E2B15C996B83AE900 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -475,6 +483,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -549,6 +558,7 @@
 				);
 				INFOPLIST_FILE = OwnTracksActivo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.owntracks.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -567,6 +577,7 @@
 				);
 				INFOPLIST_FILE = OwnTracksActivo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.owntracks.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -586,6 +597,7 @@
 				);
 				INFOPLIST_FILE = OwnTracksActivoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.owntracks.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OwnTracksActivo.app/OwnTracksActivo";
 			};
@@ -601,6 +613,7 @@
 				);
 				INFOPLIST_FILE = OwnTracksActivoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.owntracks.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OwnTracksActivo.app/OwnTracksActivo";
 			};

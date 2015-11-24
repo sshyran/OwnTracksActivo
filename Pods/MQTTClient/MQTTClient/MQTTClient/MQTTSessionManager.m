@@ -37,13 +37,16 @@
 
 @property (strong, nonatomic) NSTimer *disconnectTimer;
 @property (strong, nonatomic) NSTimer *activityTimer;
+#if TARGET_OS_IPHONE == 1
 @property (nonatomic) UIBackgroundTaskIdentifier backgroundTask;
-@property (strong, nonatomic) void (^completionHandler)(UIBackgroundFetchResult);
+#endif
 
 @property (nonatomic) BOOL persistent;
 @property (nonatomic) NSUInteger maxWindowSize;
 @property (nonatomic) NSUInteger maxSize;
 @property (nonatomic) NSUInteger maxMessages;
+
+@property (strong, nonatomic) NSMutableDictionary *internalSubscriptions;
 
 @end
 
@@ -57,8 +60,8 @@
     self = [super init];
 
     self.state = MQTTSessionManagerStateStarting;
+#if TARGET_OS_IPHONE == 1
     self.backgroundTask = UIBackgroundTaskInvalid;
-    self.completionHandler = nil;
 
     NSNotificationCenter *defaultCenter = [NSNotificationCenter defaultCenter];
 
@@ -76,6 +79,7 @@
                       selector:@selector(appDidBecomeActive)
                           name:UIApplicationDidBecomeActiveNotification
                         object:nil];
+#endif
     return self;
 }
 
@@ -91,6 +95,7 @@
     return self;
 }
 
+#if TARGET_OS_IPHONE == 1
 - (void)appWillResignActive
 {
     [self disconnect];
@@ -110,6 +115,7 @@
 {
     [self connectToLast];
 }
+#endif
 
 - (void)connectTo:(NSString *)host
              port:(NSInteger)port
@@ -191,6 +197,7 @@
    securityPolicy:(MQTTSSLSecurityPolicy *)securityPolicy
      certificates:(NSArray *)certificates
 {
+    BOOL shouldReconnect = self.session != nil;
     if (!self.session ||
         ![host isEqualToString:self.host] ||
         port != self.port ||
@@ -249,7 +256,14 @@
         self.reconnectTime = RECONNECT_TIMER;
         self.reconnectFlag = FALSE;
     }
-    [self connectToInternal];
+    if(shouldReconnect){
+        NSLog(@"MQTTSessionManager reconnecting");
+        [self disconnect];
+        [self reconnect];
+    }else{
+        NSLog(@"MQTTSessionManager connecting");
+        [self connectToInternal];
+    }
 }
 
 - (UInt16)sendData:(NSData *)data topic:(NSString *)topic qos:(MQTTQosLevel)qos retain:(BOOL)retainFlag
@@ -301,15 +315,12 @@
         case MQTTSessionEventConnectionClosed:
         case MQTTSessionEventConnectionClosedByBroker:
             self.state = MQTTSessionManagerStateClosed;
+#if TARGET_OS_IPHONE == 1
             if (self.backgroundTask) {
                 [[UIApplication sharedApplication] endBackgroundTask:self.backgroundTask];
                 self.backgroundTask = UIBackgroundTaskInvalid;
             }
-            if (self.completionHandler) {
-                self.completionHandler(UIBackgroundFetchResultNewData);
-                self.completionHandler = nil;
-            }
-
+#endif
             self.state = MQTTSessionManagerStateStarting;
             break;
         case MQTTSessionEventProtocolError:
@@ -335,7 +346,9 @@
 
 - (void)newMessage:(MQTTSession *)session data:(NSData *)data onTopic:(NSString *)topic qos:(MQTTQosLevel)qos retained:(BOOL)retained mid:(unsigned int)mid
 {
-    [self.delegate handleMessage:data onTopic:topic retained:retained];
+    if (self.delegate) {
+        [self.delegate handleMessage:data onTopic:topic retained:retained];
+    }
 }
 
 - (void)connected:(MQTTSession *)session sessionPresent:(BOOL)sessionPresent {
@@ -347,10 +360,19 @@
     }
 }
 
+- (void)messageDelivered:(MQTTSession *)session msgID:(UInt16)msgID {
+    if (self.delegate) {
+        if ([self.delegate respondsToSelector:@selector(messageDelivered:)]) {
+            [self.delegate messageDelivered:msgID];
+        }
+    }
+}
+
 
 - (void)connectToInternal
 {
-    if (self.state == MQTTSessionManagerStateStarting) {
+    if (self.state == MQTTSessionManagerStateStarting
+        && self.session != nil) {
         self.state = MQTTSessionManagerStateConnecting;
         [self.session connectToHost:self.host
                                port:self.port
@@ -376,7 +398,11 @@
     [self connectToInternal];
 }
 
-- (void)setSubscriptions:(NSMutableDictionary *)newSubscriptions
+- (NSDictionary *)subscriptions {
+    return self.internalSubscriptions;
+}
+
+- (void)setSubscriptions:(NSDictionary *)newSubscriptions
 {
     if (self.state==MQTTSessionManagerStateConnected) {
         for (NSString *topicFilter in self.subscriptions) {
@@ -393,7 +419,7 @@
             }
         }
     }
-    _subscriptions=newSubscriptions;
+    _internalSubscriptions=[newSubscriptions mutableCopy];
 }
 
 @end
